@@ -1,0 +1,210 @@
+{% extends 'codi/base.html' %}
+{% load static %}
+
+{% block style %}
+.frame {
+position: relative;
+z-index: 2;
+width: 100%;
+max-width: 1300px;
+margin: 0px auto;
+clear: both;
+padding: 0px 30px;
+overflow: hidden;
+display: flex;
+}
+.cate_left {
+width: 20%;
+overflow: hidden;
+margin-top: 20px;
+}
+.content_right {
+width: 80%;
+margin-top: 20px;
+overflow: hidden;
+}
+.cate_title {
+padding: 0;
+height: 60px;
+line-height: 60px;
+border-bottom: 1px solid #e7e7e7;
+margin: 0px;
+width: 90%;
+font-size: 22px;
+font-weight: 600;
+color: #000000;
+}
+.cate_all.cate_title{
+cursor: pointer;
+font-size: 20px;
+}
+div#cate_all {
+color: #000000;
+}
+.content_right .row {
+display: flex;
+flex-wrap: wrap;
+margin-left: 15px;
+}
+.cate_option, .cate_default {
+border-bottom: 1px solid #e7e7e7;
+width: 90%;
+}
+.cate_default div {
+background-size: 10px;
+cursor: pointer;
+padding: 0;
+height: 60px;
+line-height: 60px;
+font-size: 20px;
+color: #333;
+}
+.cate_default ul {
+display: none;
+}
+.cate_default a {
+color: #000000;
+}
+section.ftco-section.testimony-section.bg-light {
+padding-top: 10px;
+}
+.card {
+display: block;
+width: 18rem;
+}
+.card .clothes{
+width: 260px;
+}
+img.clothes {
+margin-top: 13px;
+}
+#addBtn{
+float: right;
+}
+{% comment %} 중간 대문?? 위아래 폭 줄이기 {% endcomment %}
+.hero-wrap.hero-wrap-2 .slider-text {
+    height: 380px !important;
+}
+.hero-wrap.hero-wrap-2 {
+    height: 400px !important;
+    position: relative;
+}
+{% endblock style %}
+
+{% block content %}
+
+<section class="ftco-section testimony-section bg-light">
+    <div class="container" style="margin-top:230px;">
+    <div style="text-align:center;">
+    <h2>옷 추가하기</h2>
+    <span><a href="{% url 'codi:myCloset' %}"><i class="fas fa-heart"></i> 내옷장 가기</a></span>
+    </div>
+    <hr style="width:auto; border: 1px dashed #ABCEEA;">
+        <div class="frame">
+        <!-- 좌측에 배열되는 카테고리 -->
+            <div class="cate_left">
+
+                <div>
+                    <h2 class="cate_title text-center">CATEGORIES</h2>
+                    <div class="cate_title cate_all">
+                        <div class="cate_name" id="cate_all" data-id="99">전체</div>
+                    </div>
+                    <div class="cate_default">
+                        <div class="cate_name" data-id="2">아우터</div>
+                    </div>
+                    <div class="cate_default">
+                        <div class="cate_name" data-id="1">상의</div>
+                    </div>
+                    <div class="cate_default">
+                        <div class="cate_name" data-id="4">바지</div>
+                    </div>
+                    <div class="cate_default">
+                        <div class="cate_name" data-id="3">스커트</div>
+                    </div>
+                    <div class="cate_default">
+                        <div class="cate_name" data-id="5">원피스</div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- 선택된 옷은 오른쪽 리스트에 나타남 -->
+            <div class="content_right">
+                <div id="clothCardList" class="row">
+            
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block script %}
+<script>
+$(function(){
+    $.ajax({
+            url:'{% url "codi:getClothList" %}',
+            method:'POST',
+            data:{
+                "csrfmiddlewaretoken": '{{csrf_token}}',
+                "category_id":99
+                },
+            success: function(data){
+                console.log("ㅅㄱ");
+                $('#clothCardList').text('');
+                $('#clothCardList').append(data);
+            },
+            error: function(data){
+                console.log("ㅈㅅ");
+            }
+    })
+    $(document).on('click', '.cate_name', function(){
+        var id = $(this).data('id');
+        console.log(id);
+        $.ajax({
+            url:'{% url "codi:getClothList" %}',
+            method:'POST',
+            data:{
+                "csrfmiddlewaretoken": '{{csrf_token}}',
+                "category_id":id
+                },
+            success: function(data){
+                console.log("ㅅㄱ");
+                $('#clothCardList').text('');
+                $('#clothCardList').append(data);
+            },
+            error: function(data){
+                console.log("ㅈㅅ");
+            }
+        })
+    })
+    $(document).on('click', '.addBtn', function(e){
+
+        var id = $(this).data('id');
+        var lab = $(this).data('label');
+        var img = $(this).data('img');
+        console.log(img)
+        var button = $(this);
+        $.ajax({
+            url:'{% url "codi:add" %}',
+            method:'POST',
+            data:{
+                "csrfmiddlewaretoken": '{{csrf_token}}',
+                "img_url": img
+                },
+            success: function(data){
+                console.log("ㅅㄱ");
+                $(e.target).toggleClass('btn-secondary btn-success');
+
+            },
+            error: function(data){
+                console.log("ㅈㅅ");
+            }
+        })
+    })
+})
+</script>
+{% endblock script %}

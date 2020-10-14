@@ -1,0 +1,108 @@
+{% extends 'codi/base.html' %}
+{% load static %}
+
+{% block style %}
+{% comment %} 이미지카드 {% endcomment %}
+.card{
+display: inline-block;
+}
+
+{% comment %} 선택한 옷 이미지 크기 {% endcomment %}
+.pickTop, .pickBottom, .pickOuter, .pickOnepiece {
+width: 260px;
+height: 260px;
+margin-top: 10px;
+}
+
+p.card-text.codipick{
+font-size: x-large;
+}
+.card-body {
+padding: 0 !important;
+}
+{% comment %} 중간 대문?? 위아래 폭 줄이기 {% endcomment %}
+.hero-wrap.hero-wrap-2 .slider-text {
+height: 380px !important;
+}
+.hero-wrap.hero-wrap-2 {
+height: 400px !important;
+position: relative;
+}
+{% comment %} section.ftco-section.testimony-section.bg-light {
+padding-top: 0;
+} {% endcomment %}
+p.card-text.text-center {
+margin-bottom: 0;
+
+}
+.pick3P.text-center, .pick2P.text-center {
+margin-bottom: 20px;
+}
+.ftco-section {
+padding: 2em 0;
+position: relative;
+}
+{% endblock style %}
+
+{% block content %}
+
+
+<section class="ftco-section testimony-section bg-light">
+    <div class="container" style="margin-top:200px;">
+    <div class="text-center pageTitle">
+        <h2 class="text-center">나의 코디컵 결과</h2>
+        <span><a href="{% url 'codi:codiWorldcup' %}"><i class="fas fa-trophy"></i> 코디컵 하러가기</a></span>
+      <hr style="width:auto; border: 1px dashed #ABCEEA;">
+    </div>
+        {% for threePcup in threePcups %}
+        <div class="pick3P text-center">
+            <div class="card" style="width: 17rem;">
+                <img class="pickTop" src="{{threePcup.top_url}}">
+                <div class="card-body">
+                    <p class="card-text codipick">상의</p>
+                </div>
+            </div>
+            <div class="card" style="width: 17rem;">
+                <img class="pickBottom" src="{{threePcup.bot_url}}">
+                <div class="card-body">
+                    <p class="card-text codipick">하의</p>
+                </div>
+            </div>
+            <div class="card" style="width: 17rem;">
+                <img class="pickOuter" src="{{threePcup.out_url}}">
+                <div class="card-body">
+                    <p class="card-text codipick">외투</p>
+                </div>
+            </div>
+            <p class="card-text text-center">{{threePcup.created_at}}</p>
+                
+        </div>
+        {% endfor %}
+
+        {% for twoPcup in twoPcups %}
+        <div class="pick2P text-center">
+            <div class="card" style="width: 17rem;">
+                <img class="pickOnepiece" src="{{twoPcup.one_url}}">
+                <div class="card-body">
+                    <p class="card-text codipick">원피스</p>
+                </div>
+            </div>
+            <div class="card" style="width: 17rem;">
+                <img class="pickOuter" src="{{twoPcup.out_url}}">
+                <div class="card-body">
+                    <p class="card-text codipick">외투</p>
+                </div>
+            </div>
+            <p class="card-text text-center">{{twoPcup.created_at}}</p>
+            
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}
+
+{% block script %}
+<script>
+
+</script>
+{% endblock script %}

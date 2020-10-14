@@ -1,0 +1,288 @@
+{% extends 'codi/base.html' %}
+{% load static %}
+
+{% block style %}
+.rounded-circle {
+height: 60px;
+width: 60px;
+background-color: rgb(255, 255, 255);
+border: solid;
+}
+div#palColor {
+display: flex;
+}
+.output-layout {
+margin-bottom: 1em;
+}
+
+{% endblock style %}
+{% block content %}
+
+<section class="ftco-section testimony-section bg-light">
+    <div class="container" style="margin-top:150px;">
+    <div class="row justify-content-center mb-3">
+    <div class="col-md-7 text-center heading-section ftco-animate">
+        <h3>내 코디북 작성</h3>
+      <hr style="width:auto; border: 1px dashed #ABCEEA;">
+      </div>
+    </div>
+
+    </div>
+
+    <div class="card text-center col-8" style="margin:0 auto;">
+        <form action="{% url 'codi:codiBook' %}" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="csrfmiddlewaretoken" value={{csrf_token}}>
+            <div class="card text-center">
+                <div class="card-body">
+                    <textarea name="contents" class="form-control" rows="5"></textarea>
+
+                    <!-- img input tag -->
+                    <div class="input-group mt-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input name="image" type="file" class="custom-file-input" id="inputGroupFile01"
+                                aria-describedby="inputGroupFileAddon01" multiple value="">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer text-right">
+                    <img id="imgPreview" />
+                    <input class="addcodibookBtn" type="submit" class="btn btn-success" value="작성하기">
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="container" style="margin-top:50px;">
+
+    <div class="row justify-content-center mb-3">
+    <div class="col-md-7 text-center heading-section ftco-animate">
+        <h3>내 코디북 보기</h3>
+        <span><a href="{% url 'codi:allCodiBook' %}"><i class="fas fa-book"></i> 코디북 둘러보기</a></span>
+      <hr style="width:auto; border: 1px dashed #ABCEEA;">
+      </div>
+      </div>
+
+        {% for article in articles %}
+        <div class="row mt-4">
+
+            <!-- 좌측 -->
+            <div class="card col-8" style="max-height: 50rem;">
+                {% if article.image %}
+                <img src="{{article.image.url}}" style="max-height: 100%; width: auto;" class="d-block w-80"
+                    alt="{{article.image.url}}">
+                {% endif %}
+            </div>
+
+                <!-- 우측 -->
+                <div class="card col-4" style="max-height: 50rem;">
+                    <div class="text-center mt-2">
+                        <div class="row float-left ml-2">
+                            <span class="muted" style="font-size: 2.5rem">{{article.user.username}}</span>
+                        </div>
+                        <div class="row float-left ml-2">
+                            <span class="muted" style="font-size: 1.3rem">{{article.updated_at}}</span>
+                        </div>
+                    </div>
+                    <div class="colorButtons text-center">
+                        {% if article.domColor %}
+                        {% else %}
+                        <div class="mt-2 btn btn-info getColor" style="font-size: 1.3em" id="getColor-{{article.id}}"
+                            data-img="{{article.image}}" disabled="false" data-article-id="{{article.id}}">색감 추출하기</div>
+                        <div class="mt-2 btn btn-secondary saveColor" style="font-size: 1.3em" id="saveColor-{{article.id}}"
+                            data-img="{{article.image}}" disabled="true" data-article-id="{{article.id}}">색감 저장하기</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="output-layout mt-2">
+                        <div class="function get-color">
+                            <h5 class="function-title">Dominant Color</h5>
+                            <div id="domColors">
+                                <div class="swatches" id="domColor">
+                                {% if article.domColor %}
+                                    <div id="domC-{{article.id}}" class="rounded-circle" style="background-color:{{article.domColor}}; color:rgb(255,255,255);" data-color=""></div>
+                                {% else %}
+                                    <div id="domC-{{article.id}}" class="rounded-circle" style="" data-color=""></div>
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="function get-palette">
+                            <h5 class="function-title">Palette</h5>
+                            <div class="function-output">
+                                <div id="palColors">
+                                    <div class="swatches" id="palColor">
+                                    {% if article.palColor1 %}
+                                        <div id="palC1-{{article.id}}" class="rounded-circle" style="background-color:{{article.palColor1}}; color:rgb(255,255,255);" data-color=""></div>
+                                        <div id="palC2-{{article.id}}" class="rounded-circle" style="background-color:{{article.palColor2}}; color:rgb(255,255,255);" data-color=""></div>
+                                        <div id="palC3-{{article.id}}" class="rounded-circle" style="background-color:{{article.palColor3}}; color:rgb(255,255,255);" data-color=""></div>
+                                        <div id="palC4-{{article.id}}" class="rounded-circle" style="background-color:{{article.palColor4}}; color:rgb(255,255,255);" data-color=""></div>
+                                    {% else %}
+                                        <div id="palC1-{{article.id}}" class="rounded-circle" style="" data-color=""></div>
+                                        <div id="palC2-{{article.id}}" class="rounded-circle" style="" data-color=""></div>
+                                        <div id="palC3-{{article.id}}" class="rounded-circle" style="" data-color=""></div>
+                                        <div id="palC4-{{article.id}}" class="rounded-circle" style="" data-color=""></div>
+                                    {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <textarea name="contents" class="form-control mb-2" style="font-size: 1.7em" rows="5"
+                        disabled>{{article.contents}}</textarea>
+
+                    <div style="text-align: right;">
+                        <a href="{% url 'codi:delete' article.id %}" class="btn btn-danger "><i
+                                class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+</section>
+
+{% endblock content %}
+
+
+{% block script %}
+<script>
+    $(function () {
+        $('#saveColor').off('click');
+        $('.addcodibookBtn').on('click', function () {
+            var fileValue = $("#inputGroupFile01").val().split("\\")
+            var fileName = fileValue[fileValue.length - 1]; // 파일명
+            console.log(fileName)
+        })
+        $(document).on('click', '.getColor', function (e) {
+            var id = $(this).data('article-id')
+            console.log(id)
+            e.preventDefault();
+            console.log("추출")
+            var img_url = $(this).data('img')
+            console.log(img_url)
+            $.ajax({
+                url: '{% url "color:getColor" %}',
+                method: 'POST',
+                data: {
+                    "csrfmiddlewaretoken": '{{csrf_token}}',
+                    'img_url': img_url,
+                    'id': id
+                },
+                success: function (data) {
+                    console.log("색 추출 성공");
+                    console.log(data.dominant_color);
+                    var dcrgb = data.dominant_color
+                    var rgb = 'rgb(' + dcrgb[0] + ',' + dcrgb[1] + ',' + dcrgb[2] + ')';
+                    console.log(rgb)
+                    console.log(data.palettes);
+                    //var prgb1 = data.palettes[0]
+                    var prgb1 = 'rgb(' + data.palettes[0][0] + ',' + data.palettes[0][1] +
+                        ',' + data.palettes[0][2] + ')';
+                    //var prgb2 = data.palettes[1]
+                    var prgb2 = 'rgb(' + data.palettes[1][0] + ',' + data.palettes[1][1] +
+                        ',' + data.palettes[1][2] + ')';
+                    //var prgb3 = data.palettes[2]
+                    var prgb3 = 'rgb(' + data.palettes[2][0] + ',' + data.palettes[2][1] +
+                        ',' + data.palettes[2][2] + ')';
+                    //var prgb4 = data.palettes[3]
+                    var prgb4 = 'rgb(' + data.palettes[3][0] + ',' + data.palettes[3][1] +
+                        ',' + data.palettes[3][2] + ')';
+                    console.log(prgb1)
+                    console.log(prgb2)
+                    console.log(prgb3)
+                    console.log(prgb4)
+
+                    // dominant color 채우기
+                    var domC = document.getElementById("domC-"+id);
+                    domC.style.backgroundColor = rgb;
+                    domC.style.color = 'rgb(255,255,255)';
+
+                    // palettes color 채우기
+                    var domC = document.getElementById("palC1-"+id);
+                    domC.style.backgroundColor = prgb1;
+                    domC.style.color = 'rgb(255,255,255)';
+
+                    var domC = document.getElementById("palC2-"+id);
+                    domC.style.backgroundColor = prgb2;
+                    domC.style.color = 'rgb(255,255,255)';
+
+                    var domC = document.getElementById("palC3-"+id);
+                    domC.style.backgroundColor = prgb3;
+                    domC.style.color = 'rgb(255,255,255)';
+
+                    var domC = document.getElementById("palC4-"+id);
+                    domC.style.backgroundColor = prgb4;
+                    domC.style.color = 'rgb(255,255,255)';
+
+                    console.log('#getColor-'+id)
+                    // color 버튼 속성 변경
+                    $('#getColor-'+id).off('click');
+                    $('#getColor-'+id).attr('disabled', true);
+                    $('#getColor-'+id).toggleClass('btn-secondary btn-info');
+
+                    $('#saveColor-'+id).attr('disabled', false);
+                    $('#saveColor-'+id).toggleClass('btn-secondary btn-success');
+                    $('#getColor-'+id).hide()
+
+                    $('#domC-'+id).data('img', rgb)
+                    $('#palC1-'+id).data('img', prgb1)
+                    $('#palC2-'+id).data('img', prgb2)
+                    $('#palC3-'+id).data('img', prgb3)
+                    $('#palC4-'+id).data('img', prgb4)
+
+                    $(document).on('click', '.saveColor', function (e) {
+                        e.preventDefault();
+                        console.log("색감 저장하기")
+                        console.log(rgb)
+                        console.log(prgb1)
+                        console.log(prgb2)
+                        console.log(prgb3)
+                        console.log(prgb4)
+
+                        $.ajax({
+                            url: '{% url "codi:addColor" %}',
+                            method: 'POST',
+                            data: {
+                                "csrfmiddlewaretoken": '{{csrf_token}}',
+                                // 'img_url': img_url,
+                                // 'id': id
+                                'rgb': rgb,
+                                'prgb1': prgb1,
+                                'prgb2': prgb2,
+                                'prgb3': prgb3,
+                                'prgb4': prgb4,
+                                'id': id
+                            },
+                            success: function (data) {
+                                // disabled true로 만들고 
+                                // 버튼 hide
+                                console.log("색감 저장 성공!!")
+                                $('#saveColor-'+id).hide()
+
+                            },
+                            error: function(data) {
+
+                            }
+                        })
+                    })
+                },
+                error: function (data) {
+                    console.log("색 추출 실패");
+                }
+            })
+
+        })
+
+    })
+</script>
+{% endblock script %}
+

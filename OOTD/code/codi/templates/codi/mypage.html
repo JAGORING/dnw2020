@@ -1,0 +1,27 @@
+{% extends 'codi/base.html' %}
+{% load static %}
+
+{% block style %}
+.img-style {
+    width: 400px;
+    height: auto;
+    
+}
+{% endblock style %}
+
+{% block content %}
+
+<section class="ftco-section testimony-section bg-light">
+  <div class="container" style="margin-top:200px;">
+    <div class="row justify-content-center mb-3">
+
+<a href="{% url 'codi:codiBook' %}"><img class="img-style" src="{% static "images/mypage_codibook.png" %}"></a>
+<a href="{% url 'codi:codicupResult' %}"><img class="img-style" src="{% static "images/mypage_codicup.png" %}"></a>
+<a href="{% url 'accounts:password' %}"><img class="img-style" src="{% static "images/mypage_usersetting.png" %}"></a>
+
+</div>
+</div>
+
+</section>
+
+{% endblock content %}

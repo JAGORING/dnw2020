@@ -1,0 +1,6 @@
+# exclude CSS and HTML
+
+code/codi/static/* linguist-vendored
+
+code/accounts/templates/* linguist-vendored
+code/codi/templates/* linguist-vendored

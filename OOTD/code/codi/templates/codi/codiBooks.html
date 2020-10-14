@@ -1,0 +1,85 @@
+{% extends 'codi/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="ftco-section testimony-section bg-light">
+    <div class="container" style="margin-top:150px;">
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+                <h3 class="mb-3">{{user_name}} 의 코디북</h3>
+                <hr style="width:auto; border: 1px dashed #ABCEEA;">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        {% for article in articles %}
+        <div class="row mt-4">
+            <div class="card col-8" style="max-height: 50rem;">
+                {% if article.image %}
+                    <img src="{{article.image_thumbnail.url}}" style="max-height: 100%; width: auto;" class="d-block w-80" alt="{{article.image_thumbnail.url}}">
+                {% endif %}
+            </div>
+            {% comment %} <div class="card-body" style="min-height: 10rem;"> {% endcomment %}
+            <div class="card col-4" style="max-height: 50rem;">
+                <div class="text-center mt-2">
+                    <div class="row float-left ml-2">
+                        <span class="muted" style="font-size: 2.5rem">{{article.user.username}}</span>
+                    </div>
+                    <div class="row float-left ml-2">
+                        <span class="muted" style="font-size: 1.3rem">{{article.updated_at}}</span>
+                    </div>
+                </div>
+                <div class="mt-2 ml-2" style="font-size: 1.3em">컬러</div>
+
+                <div class="mb-2" style="text-align: center;">
+                    {% if user in article.user_likes.all %}
+                        <button type="button" class="btn btn-success likes" data-article-id='{{article.id}}'><i class="fas fa-thumbs-up"></i>{{count}}</button>
+                    {% else %}
+                        <button type="button" class="btn btn-secondary likes" data-article-id='{{article.id}}'><i class="fas fa-thumbs-up"></i></button>
+                    {% endif %}
+                </div>
+
+                <textarea name="contents" class="form-control mb-2" style="font-size: 1.7em"  rows="5" disabled>{{article.contents}}</textarea>
+
+                {% comment %} <p class="card-text mt-2 ml-2" style="overflow: auto; font-size: 2.3em"></p> {% endcomment %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+{% endblock content %}
+
+{% block script %}
+<script>
+    {% comment %} '#likeButton', 'submit', 'prevent Default', '$.ajax()' {% endcomment %}
+    $(function(){
+        $(document).on('click', '.likes', function(e){
+        //$('.likes').on('click', function(e){
+            //e.preventDefault();
+            var article_id = $(this).data('article-id')
+            var button = $(this);
+            $.ajax({
+                url: '{% url "codi:likes" %}',
+                method: 'POST',
+                data: {
+                    article_id: article_id,
+                    csrfmiddlewaretoken: '{{csrf_token}}'
+                },
+                success: function(data){
+                    $(e.target).toggleClass('btn-secondary btn-success');
+                    $('.likes_cnt').text(data.count)
+                    //button.toggleClass(['btn-secondary', 'btn-success']);
+                },
+                error: function(data){
+                    if(data.status == 403) location.href = "{% url 'accounts:login' %}";
+                }
+            })
+        })
+    })
+</script>
+{% endblock script %}

@@ -1,0 +1,240 @@
+{% extends 'codi/base.html' %}
+
+{% load static %}
+
+{% block style %}
+.rounded-circle {
+height: 30px;
+width: 30px;
+border: solid;
+}
+div#palColor {
+display: flex;
+}
+{% endblock style %}
+
+{% block content %}
+<input id="nowMonth" type="hidden" value="">
+
+<!-- 메인(HOME)에서 서비스 선택하는 곳 -->
+<section class="ftco-section">
+	<div class="container">
+		<div class="row" style="margin-top: 150px;">
+			<!-- 오늘의 날씨 : 날씨 데이터 바로 보여주기 -->
+			<div class="col-md-4">
+				<div class="listing-wrap img rounded d-flex align-items-end"
+					style='background-image: url("{% static "images/home_temperature_bg.png" %}");'>
+					<ul style="margin-top: 10px; margin-bottom: auto;">
+						<li><img src="{% static "images/thermometer.png" %}" style="width: 50px; height: auto;">
+							<h5>현재 온도 : <span id="now_temp"></span> ℃</h5>
+						</li>
+						<li><img src="{% static "images/thermometer_hot.png" %}" style="width: 50px; height: auto;">
+							<h5 style="color : black;">최고 온도 : <span id="max_temp"></span> ℃</h5>
+						</li>
+						<li><img src="{% static "images/thermometer_cold.png" %}" style="width: 50px; height: auto;">
+							<h5 style="color : black;">최저 온도 : <span id="min_temp"></span> ℃</h5>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 코디월드컵 : 누르면 코디월드컵 실행 -->
+			<div class="col-md-4">
+				<a href="{% url 'codi:codiWorldcup' %}" class="goCodicupLinkOnMain">
+					<!-- <a href="" class="goCodicupLinkOnMain"> -->
+					<div class="listing-wrap img rounded d-flex align-items-end"
+						style='background-image: url("{% static "images/home_codiworldcup.png" %}");'>
+					</div>
+				</a>
+			</div>
+
+			<!-- 코디북 : 누르면 코디북 작성 페이지 or 로그인 페이지 -->
+			<!-- 모든 사람의 코디북이 뜨도록 수정 (191212) -->
+			<div class="col-md-4">
+				<a href="{% url 'codi:allCodiBook' %}">
+					<div class="listing-wrap img rounded d-flex align-items-end"
+						style='background-image: url("{% static "images/home_codibook.png" %}");'>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ftco-section ftco-no-pt">
+	<div class="container">
+		<div class="row justify-content-center mb-5">
+			<div class="col-md-7 heading-section text-center ftco-animate">
+				<span class="subheading">Codi&nbsp;Book</span>
+				<h2>Recent Codi</h2>
+			</div>
+		</div>
+		<div class="row d-flex">
+
+			{% for article in articles %}
+			<div class="col-md-3 d-flex ftco-animate">
+				<div class="blog-entry justify-content-end">
+					<div class="text">
+						<img src="{{article.image_thumbnail.url}}" class="block-20 img"
+							alt="{{article.image_thumbnail.url}}">
+
+						<div class="swatches" id="palColor">
+							<div id="palC1-{{article.id}}" class="rounded-circle"
+								style="background-color:{{article.palColor1}}; color:rgb(255,255,255);" data-color="">
+							</div>
+							<div id="palC2-{{article.id}}" class="rounded-circle"
+								style="background-color:{{article.palColor2}}; color:rgb(255,255,255);" data-color="">
+							</div>
+							<div id="palC3-{{article.id}}" class="rounded-circle"
+								style="background-color:{{article.palColor3}}; color:rgb(255,255,255);" data-color="">
+							</div>
+							<div id="palC4-{{article.id}}" class="rounded-circle"
+								style="background-color:{{article.palColor4}}; color:rgb(255,255,255);" data-color="">
+							</div>
+						</div>
+
+						<div class="meta mb-3">
+							<div>{{article.updated_at}}</div>
+							<div><a href="{% url 'codi:codiBooks' article.user.id %}">{{article.user.username}}</a>
+							</div>
+							<div><i class="fas fa-heart" style="color:#DDB8CF;"></i></div>
+							<div>
+								<p class="likes_cnt">{{article.user_likes.all|length}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</section>
+
+<section class="ftco-section ftco-agent">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<span class="subheading">Our Team</span>
+				<h2 class="mb-4">옷입혀조</h2>
+			</div>
+		</div>
+
+		<div class="row" style="text-align:center;">
+			<div>
+				<!-- 이미지를 중앙정렬하기 위한 div 추가 -->
+				<div class="col-md-3 ftco-animate" style="display:inline-block;">
+					<div class="agent">
+						<div class="img">
+							<img src='{% static "images/team/jy.jpg" %}' class="img-fluid" alt="Colorlib Template">
+						</div>
+						<div class="desc">
+							<h3><a href="properties.html">김지연</a></h3>
+							<p class="h-info"><span class="details">Web BackEnd<br>문서작성</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 ftco-animate" style="display:inline-block;">
+					<div class="agent">
+						<div class="img">
+							<img src='{% static "images/team/sh.JPG" %}' class="img-fluid" alt="Colorlib Template">
+						</div>
+						<div class="desc">
+							<h3><a href="properties.html">안소현</a></h3>
+							<p class="h-info"><span class="details">Web FrontEnd<br>유지보수</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 ftco-animate" style="display:inline-block;">
+					<div class="agent">
+						<div class="img">
+							<img src='{% static "images/team/mk.jpg" %}' class="img-fluid" alt="Colorlib Template">
+						</div>
+						<div class="desc">
+							<h3><a href="properties.html">조민경</a></h3>
+							<p class="h-info"><span class="details">Web BackEnd<br>DB구축 및 관리</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+
+{% endblock content %}
+
+{% block script %}
+<script>
+	var latitude;
+	var longitude;
+	var min;
+	var max;
+	var now;
+	var nowDate;
+	var nowMonth;
+
+	function getLocation() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function (position) {
+				latitude = position.coords.latitude
+				longitude = position.coords.longitude
+				$.ajax({
+					url: '{% url "codi:getWeather" %}',
+					method: 'POST',
+					data: {
+						lng: longitude,
+						lat: latitude,
+						csrfmiddlewaretoken: '{{csrf_token}}'
+					},
+					success: function (data) {
+						console.log(data)
+						min = data.min
+						now = data.now
+						max = data.max
+						nowDate = data.nowDate
+						nowMonth = data.nowMonth
+						// console.log(nowDate)
+						$('#nowMonth').attr('value', nowMonth)
+						$('#now_temp').append(now)
+						$('#max_temp').append(max)
+						$('#min_temp').append(min)
+
+					},
+					error: function (data) {
+						'요청이 정상적으로 완료되지 않았을 때'
+					}
+
+				})
+			})
+		} else {
+			alert('GPS를 지원하지 않습니다.')
+		}
+	}
+	$(function () {
+		getLocation()
+	})
+	$(function () {
+		$(document).on('click', '.goCodicupLinkOnMain', function () {
+			console.log("index 메인페이지 - 월드컵하자")
+			$.ajax({
+				url: '{% url "codi:codiWorldcup" %}',
+				method: 'POST',
+				data: {
+					"csrfmiddlewaretoken": '{{csrf_token}}',
+				},
+				success: function (data) {
+					console.log("index 메인페이지 - 그래!");
+
+				},
+				error: function (data) {
+					console.log("index 메인페이지 - ㅈㅅ");
+					alert(
+						"from main\n옷장에 옷을 추가하세요!\n--코디컵 진행시 필요한 옷 개수--\n상의,바지,치마,외투 : 4개이상\n원피스 : 2개이상")
+					location.href = "{% url 'codi:addCloth' %}";
+				}
+			})
+		})
+	})
+</script>
+{% endblock script %}
