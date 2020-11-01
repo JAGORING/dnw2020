@@ -1,31 +1,19 @@
-Future Imperfect by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# Danawa Web Service
 
+## 진행상황
 
-It's been a long time coming, but I've finally gotten around to creating a brand new
-blog-style template (and the first since Striped, which came out waaaaay back in 2013).
-Anyway, Future Imperfect features a clean, expansive layout, a toggleable search box,
-and -- because pretty much all modern browsers can use it now -- a whole lot of flexbox
-action. Enjoy it :)
+```
+1. 페이지 상단 메뉴페이지 수정하였습니다.
+2. 좌측 상단에 로고 이미지와 제목 수정하였습니다.
+3. 페이지 중앙부분 Post 부분 중 제일 위에 있던 포스트를 코디북 기능으로 바꾸어 보았습니다.
+4. 우측 메뉴를 클릭하면 로그인 버튼과 메뉴이동 버튼을 만들었습니다.
+```
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+## 고려상황
 
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+```
+1. 좌측 하단에 있는 친구들을 인기있는 코디북 게시글로 사용하기로 한만큼 수정이 필요합니다.
+2. 맨 밑에 이전페이지 가기와 다음페이지 가기는 삭제해야 하지만 혹시 몰라 남겨두었습니다.
+3. 날씨 기능을 어디에 넣을지 미팅이 필요합니다.
+4. 스크롤을 부드럽게 내리는 기술의 경우 제이쿼리를 사용한 것 같은데 이부분이 미흡하여 작업하지 못했습니다. 
+```
