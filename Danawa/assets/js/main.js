@@ -80,6 +80,14 @@
 				}, 100);
 			});
 
+			// 웹페이지 이동 시 부드럽게 이동
+			$('.smooth').click(function () {
+			  $('html, body').animate({
+				scrollTop: $($.attr(this, 'href')).offset().top
+			  }, 500);
+			  return false;
+			});
+
 	// Intro.
 		var $intro = $('#intro');
 
@@ -91,5 +99,7 @@
 			breakpoints.on('>large', function() {
 				$intro.prependTo($sidebar);
 			});
+
+
 
 })(jQuery);
