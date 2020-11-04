@@ -1,0 +1,19 @@
+{
+  "name": "danawa",
+  "version": "0.0.1",
+  "description": "\"다나와의 익스프레스 서버 제작\"",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.5.3",
+    "express": "4.17.1",
+    "jquery": "3.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.6"
+  }
+}
