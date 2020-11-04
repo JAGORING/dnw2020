@@ -100,6 +100,71 @@
 				$intro.prependTo($sidebar);
 			});
 
-
+			$(window).resize(function () {
+				var byt = $("body").width();
+				if (byt < 768) {
+					tabToAcor("#myDiv");
+				}
+			});
 
 })(jQuery);
+
+			function tabToAcor(id) {
+				var link = "";
+				var inn = "";
+				var ic = "";
+				var ic2 = "";
+				$(id).removeClass();
+				$(id).addClass("panel-group");
+				$(id).find(".nav li").each(function (e) {
+					if (e < 1) {
+						inn = "in";
+					} else {
+						inn = "";
+					}
+					link = $(this).find("a").attr("href");
+					ic2 = $(this).find("a").html();
+					$(link).removeAttr("role");
+					$(link).removeClass();
+					$(link).css("padding", "0");
+					$(link).addClass("panel panel-default pull-left col-xs-12 nopadding");
+					ic = $(link).html();
+					$(link).html("");
+					$(link).prepend('<div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="' + link + '" href="' + link + '1">' + ic2 + '</a></h4></div>');
+					$(link).append('<div id="' + link.substring(1, link.length) + '1" class="panel-collapse collapse ' + inn + '"><div class="panel-body"> ' + ic + '</div></div>');
+				});
+				$(id).find(".nav").remove();
+			}
+			
+			function changeCoordMode(mode) {
+	
+				// 옷 설정 모드
+				if (mode === 0) {
+					$('#id-div-char-win').css('display', 'flex');
+					$('#id-div-coord-win').css('display', 'none');
+	
+					const $parent = $('#id-div-mode-change');
+					$parent.find('.btn-light').addClass('active')
+					$parent.find('.btn-dark').removeClass('active')
+	
+					setTimeout(function () {
+						setPartsHeights();
+					}, 20)
+				}
+				// 코디하기 모드
+				else {
+					$('#id-div-char-win').css('display', 'none');
+					$('#id-div-coord-win').css('display', 'flex');
+	
+					const $parent = $('#id-div-mode-change');
+					$parent.find('.btn-light').removeClass('active')
+					$parent.find('.btn-dark').addClass('active')
+	
+				}
+			}
+		
+			$("div.row.control .btn-group > .btn").click(function () {
+				$("div.row.control .btn-group > .btn").removeClass("active");
+				$(this).addClass("active");
+			});
+			
