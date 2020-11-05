@@ -10,7 +10,7 @@ const nunjucks = require('nunjucks');
 
 dotenv.config();
 const indexRouter = require('./routes/index');
-//const loginRouter = require('./routes/login');
+const loginRouter = require('./routes/login');
 //const signupRouter = require('./routes/signup');
 //const singleRouter = require('./routes/single');
 
@@ -22,6 +22,7 @@ nunjucks.configure('views', {
   express: app,
   watch: true,
 });
+
 app.use(morgan('dev'));
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use('/js', express.static(__dirname + '/assets/js')); // redirect bootstrap JS
