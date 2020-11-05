@@ -6,11 +6,11 @@ const session = require('express-session');
 const dotenv = require('dotenv');
 const nunjucks = require('nunjucks');
 
-
+const connect = require('./schemas');
 
 dotenv.config();
 const indexRouter = require('./routes/index');
-const loginRouter = require('./routes/login');
+//const loginRouter = require('./routes/login');
 //const signupRouter = require('./routes/signup');
 //const singleRouter = require('./routes/single');
 
@@ -22,6 +22,8 @@ nunjucks.configure('views', {
   express: app,
   watch: true,
 });
+
+connect();
 
 app.use(morgan('dev'));
 // app.use(express.static(path.join(__dirname, 'public')));
