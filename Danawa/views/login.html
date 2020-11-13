@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
 	<link rel="stylesheet" href="/css/login.css">
 	<title>DANAWA | Login</title>
 
@@ -17,7 +17,7 @@
 				<span class="login_title">
 					Danawa Login
 				</span>
-				<form class="login_form validate-form" method="POST">
+				<form class="login_form validate-form" action="/auth/login" method="POST">
 
 					<div class="login_wrap validate-input">
 						<input class="login_input" type="text" name="username" placeholder="ID">
@@ -25,12 +25,12 @@
 					</div>
 
 					<div class="login_wrap validate-input">
-						<input class="login_input" type="password" name="pass" placeholder="Password">
+						<input class="login_input" type="password" name="password" placeholder="Password">
 						<span class="focus_input fontAwesome" data-placeholder="&#xf023;"></span>
 					</div>
 
 					<div class="wrap_login_btn">
-						<button class="login_btn">
+						<button class="login_btn" type="submit" class = "submit">
 							Login
 						</button>
 					</div>
@@ -46,7 +46,7 @@
 			<script src="/js/main.js"></script>
 			<script src="/js/jquery.scrollex.min.js"></script>
 			<script src="/js/jquery.scrolly.min.js"></script>
-			<script src = "/js/login.js"></script>
+			<!--<script src = "/js/login.js"></script>-->
 		
 		
 

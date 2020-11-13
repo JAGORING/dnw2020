@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 
+
+
 const connect = () => {
   if (process.env.NODE_ENV !== 'production') {
     mongoose.set('debug', true);
   }
   mongoose.connect('mongodb://danawa:2020@localhost:27017/admin', {
-    dbName: 'nodejs',
+    dbName: 'danawa',
     useNewUrlParser: true,
     useCreateIndex: true,
   }, (error) => {

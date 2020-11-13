@@ -1,19 +1,19 @@
 const express = require('express');
-const path = require('path');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const dotenv = require('dotenv');
 const nunjucks = require('nunjucks');
-
+const passport = require('passport');
+const bodyParser = require('body-parser');
 const connect = require('./schemas');
-
 dotenv.config();
 const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
+
 //const loginRouter = require('./routes/login');
 //const signupRouter = require('./routes/signup');
 //const singleRouter = require('./routes/single');
-
 
 const app = express();
 app.set('port', process.env.PORT || 3000);
@@ -47,6 +47,7 @@ app.use(session({
 }));
 
 app.use('/', indexRouter);
+app.use('/auth', authRouter);
 //app.use('/login', loginRouter);
 //app.use('/signup', signupRouter);
 //app.use('/single', singleRouter);
@@ -68,3 +69,7 @@ app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기 중');
 });
 
+app.use(function(req, res, next) { 
+  res.locals.user = req.session.user; 
+  next(); 
+ }); 

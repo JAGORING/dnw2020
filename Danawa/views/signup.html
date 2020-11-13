@@ -18,7 +18,7 @@
 				<span class="login_title">
 					Danawa Sign Up
 				</span>
-				<form class="login_form validate-form" method="POST">
+				<form class="login_form validate-form" action="/auth/join" method="POST">
 
 					<div class="login_wrap validate-input" style="display: inline-flex;">
 						<input class="login_input" type="text" name="username" placeholder="Name">
@@ -29,7 +29,7 @@
 					</div>
 
 					<div class="login_wrap validate-input">
-						<input class="login_input" type="email" name="useremail" placeholder="E-mail">
+						<input class="login_input" type="email" id="email"name="useremail" placeholder="E-mail">
 						<span class="focus_input fontAwesome" data-placeholder="&#xf0e0;"></span>
 					</div>
 					<div class="login_wrap validate-input">
@@ -38,7 +38,7 @@
 					</div>
 
 					<div class="login_wrap validate-input">
-						<input class="login_input" type="password" name="pass" placeholder="Password">
+						<input class="login_input" type="password" id="password"name="password" placeholder="Password">
 						<span class="focus_input fontAwesome" data-placeholder="&#xf023;"></span>
 					</div>
 						<div class="wrap_login_btn">
