@@ -35,7 +35,7 @@ tr:nth-child(even) {
   <% if (board !== null){
     for(let i = 0; i < board.length; i++) { %>
   <tr>
-    <td><a href="/board/<%= board[i]._id%>"><%=board[i].title%></a></td>
+    <td><a href=`/board/<%= board[i]._id%>`><%=board[i].title%></a></td>
     <td><%=board[i].contents%></td>
     <td><%=board[i].author%></td>
   </tr>

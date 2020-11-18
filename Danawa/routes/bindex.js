@@ -1,19 +1,20 @@
 const express = require('express');
 const router = express.Router();
+require('express-session');
 
 const Board = require('../schemas/board');
 
 //메인 페이지
 router.get('/', (req, res, next) => {
     Board.find({},(err, board) =>{
-        res.render('/board/bindex', {title : 'Main 화면', board : board});
+        res.render('bindex', {title : 'Main 화면', board : board});
     });
 });
 
 //글 상세보기
  router.get('/board/:id', (req, res) => {
     Board.findOne({_id : req.params.id}).exec((err, board) => {
-        res.render('/board/board', {title : '상세보기 및 댓글쓰기', board : board});
+        res.render('board', {title : '상세보기 및 댓글쓰기', board : board});
         console.log(board);
     });
 }) 
@@ -38,14 +39,14 @@ const board = Board.findOne({_id : req.body.id});
 
 //글 쓰기 페이지 이동
 router.get('/write', (req, res, next) => {
-    res.render('/board/write', {title : '글쓰기'});
+    res.render('write', {title : '글쓰기'});
 });
 
 //글 수정 페이지 이동
 router.get('/update/:id', (req, res, next) => {
 
     Board.findOne({_id : req.params.id}).exec((err, board) => {
-        res.render('/board/update', {title : '글 수정', board : board});
+        res.render('update', {title : '글 수정', board : board});
         console.log(board);
     });
 })
@@ -64,7 +65,7 @@ router.post('/write/writeContents', (req, res) => {
         }
         res.redirect('/');
     });
-});
+}); 
 
 //update
 router.post('/update/updateContents/:id', (req, res) => {

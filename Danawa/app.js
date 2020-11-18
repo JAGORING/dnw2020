@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const dotenv = require('dotenv');
@@ -8,9 +9,7 @@ const nunjucks = require('nunjucks');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const connect = require('./schemas');
-const ejs = require('ejs');
 
-dotenv.config();
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 
@@ -19,8 +18,10 @@ var users = require('./routes/users');
 //const loginRouter = require('./routes/login');
 //const signupRouter = require('./routes/signup');
 //const singleRouter = require('./routes/single');
+dotenv.config();
 
 const app = express();
+
 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'html');
@@ -51,17 +52,26 @@ app.use(session({
   name: 'session-cookie',
 }));
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', users);
-
 app.use('/bindex', bindex);
 
 //app.use('/login', loginRouter);
 //app.use('/signup', signupRouter);
 //app.use('/single', singleRouter);
 app.set("views", __dirname+ "/views");
-app.set("view engine", "html");
+app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
 
 
@@ -82,3 +92,12 @@ app.listen(app.get('port'), () => {
 });
 
 
+app.get("/bindex", async function (req, res) {
+  let users
+  try {
+    users = await db.collection("User").find().toArray()
+  } catch (error) {
+    res.status(500).json({ error: error.toString() })
+  }
+  res.json({ users })
+})
