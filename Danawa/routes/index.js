@@ -29,6 +29,10 @@ router.get('/single', (req, res) => {
   res.render('single', { title: '싱글페이지 - Danawa' });
 });
 
+router.get('/bindex', (req, res) => {
+  res.render('board/bindex.ejs', { title: '코디북 - Danawa' });
+});
+
 router.get('/clothes', (req, res) => {
   res.render('clothes', { title: '옷장 - Danawa' });
 });

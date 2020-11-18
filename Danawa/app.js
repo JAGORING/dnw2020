@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -7,15 +8,20 @@ const nunjucks = require('nunjucks');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const connect = require('./schemas');
+const ejs = require('ejs');
+
 dotenv.config();
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 
+var bindex = require('./routes/bindex');
+var users = require('./routes/users');
 //const loginRouter = require('./routes/login');
 //const signupRouter = require('./routes/signup');
 //const singleRouter = require('./routes/single');
 
 const app = express();
+
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'html');
 nunjucks.configure('views', {
@@ -24,7 +30,6 @@ nunjucks.configure('views', {
 });
 
 connect();
-
 app.use(morgan('dev'));
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use('/js', express.static(__dirname + '/assets/js')); // redirect bootstrap JS
@@ -48,9 +53,16 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/users', users);
+
+app.use('/bindex', bindex);
+
 //app.use('/login', loginRouter);
 //app.use('/signup', signupRouter);
 //app.use('/single', singleRouter);
+app.set("views", __dirname+ "/views");
+app.set("view engine", "html");
+app.engine("html", require("ejs").renderFile);
 
 
 app.use((req, res, next) => {
@@ -69,7 +81,4 @@ app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기 중');
 });
 
-app.use(function(req, res, next) { 
-  res.locals.user = req.session.user; 
-  next(); 
- }); 
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+</style>
+</head>
+<body>
+
+<h2><%= title %></h2>
+<p>Welcome to <%= title %></p>
+
+<table>
+  <tbody>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Author</th>
+  </tr>
+  <% if (board !== null){
+    for(let i = 0; i < board.length; i++) { %>
+  <tr>
+    <td><a href="/board/<%= board[i]._id%>"><%=board[i].title%></a></td>
+    <td><%=board[i].contents%></td>
+    <td><%=board[i].author%></td>
+  </tr>
+  <%  }} %>
+ 
+</tbody>      
+</table>
+<a href="/write">글 쓰기 페이지 이동</a>
+</body>
+</html>
