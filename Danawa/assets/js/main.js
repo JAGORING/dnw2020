@@ -168,3 +168,23 @@
 				$(this).addClass("active");
 			});
 			
+			function ChangeBack(t) {
+				if (t === '1') {
+					$(".coord-post").css('background-image', "url(./images/spring.jpg)")
+				}
+				else if (t === '2') {
+					$(".coord-post").css('background-image', "url(./images/summer.jpg)")
+				}
+				else if (t == 3) {
+					$(".coord-post").css('background-image', "url(./images/autumn.jpg)")
+				}
+				else if (t == 4) {
+					$(".coord-post").css('background-image', "url(./images/snow.jpg)")
+				}
+				else if (t == 5) {
+					$(".coord-post").css('background-image', "url(./images/indoors.jpg)")
+				}
+			}
+
+
+			

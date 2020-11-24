@@ -5,12 +5,11 @@ require('express-session');
 const Board = require('../schemas/board');
 
 //메인 페이지
-router.get('/', (req, res, next) => {
+router.get('/bindex', (req, res, next) => {
     Board.find({},(err, board) =>{
         res.render('bindex', {title : 'Main 화면', board : board});
     });
 });
-
 //글 상세보기
  router.get('/board/:id', (req, res) => {
     Board.findOne({_id : req.params.id}).exec((err, board) => {
@@ -18,8 +17,6 @@ router.get('/', (req, res, next) => {
         console.log(board);
     });
 }) 
-
-
 //댓글 쓰기
 router.post('/board/comment/write/:id', (req, res) => {   
     
@@ -28,10 +25,10 @@ const board = Board.findOne({_id : req.body.id});
         board.updateOne({_id : req.body.id},  { $push: { comments:  {contents : req.body.contents, author : req.body.author } } }, {upsert : true}, (err) =>{
             if(err){
                 console.log(err);
-                res.redirect('/');
+                res.redirect('/bindex');
             }
                        
-            res.redirect('/');
+            res.redirect('/bindex');
         });
         
 
@@ -61,9 +58,9 @@ router.post('/write/writeContents', (req, res) => {
     board.save(err => {
         if(err){
             console.log(err);
-            res.redirect('/');
+            res.redirect('/bindex');
         }
-        res.redirect('/');
+        res.redirect('/bindex');
     });
 }); 
 
@@ -76,10 +73,10 @@ router.post('/update/updateContents/:id', (req, res) => {
 
         if(err){
             console.log(err);
-            res.redirect('/');
+            res.redirect('/bindex');
         }
                    
-        res.redirect('/');
+        res.redirect('/bindex');
     });
 
     

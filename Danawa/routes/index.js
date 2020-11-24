@@ -30,15 +30,18 @@ router.get('/single', (req, res) => {
 });
 
 router.get('/bindex', (req, res) => {
-  res.render('board/bindex', { title: '코디북 - Danawa' });
+  res.render('bindex', { title: '코디북 - Danawa' });
+});
+router.get('/board', (req, res) => {
+  res.render('board', { title: '코디북 - Danawa' });
 });
 
 router.get('/update', (req, res) => {
-  res.render('board/update', { title: '글 수정 - Danawa' });
+  res.render('update', { title: '글 수정 - Danawa' });
 });
 
 router.get('/write', (req, res) => {
-  res.render('board/write', { title: '글 등록 - Danawa' });
+  res.render('write', { title: '글 등록 - Danawa' });
 });
 
 router.get('/clothes', (req, res) => {

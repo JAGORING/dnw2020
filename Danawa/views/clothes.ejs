@@ -18,80 +18,71 @@
 
         <!-- Header -->
         <header id="header">
-            <h1><a href="index.html">Danawa</a></h1>
+            <h1><a href="/">Danawa</a></h1>
             <nav class="links">
-                <ul>
-                    <li><a href="#">Codi Book</a></li>
-                    <li><a href="#">Clothes</a></li>
-                    <li><a href="#">Search Clothes</a></li>
-                    <li><a href="#">Recommed Clothes</a></li>
-                    <li><a href="#">뭘로 쓸지 몰라서 일단 남겨둠</a></li>
-                </ul>
+              <ul>
+                <li><a class="smooth" href="/bindex">Codi Book</a></li>
+                <li><a class="smooth" href="/clothes">Clothes</a></li>
+                <li><a class="smooth" href="#file">Search Clothes</a></li>
+                <li><a class="smooth" href="#reco">Recommed Clothes</a></li>
+                <li><a class="smooth" href="e">뭘로 쓸지 몰라서 일단 남겨둠</a></li>
+              </ul>
             </nav>
             <nav class="main">
-                <ul>
-                    <li class="search">
-                        <a class="fa-search" href="#search">Search</a>
-                        <form id="search" method="get" action="#">
-                            <input type="text" name="query" placeholder="Search" />
-                        </form>
-                    </li>
-                    <li class="menu">
-                        <a class="fa-bars" href="#menu">Menu</a>
-                    </li>
-                </ul>
+              <ul>
+                <li class="search">
+                  <a class="fa-search" href="#search">Search</a>
+                  <form id="search" method="get" action="#">
+                    <input type="text" name="query" placeholder="Search" />
+                  </form>
+                </li>
+                <li class="menu">
+                  <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+              </ul>
             </nav>
-        </header>
-
-        <!-- Menu -->
-        <section id="menu">
-
+          </header>
+      
+          <!-- Menu -->
+          <section id="menu">
+      
             <!-- Search/ 검색바 어떠케 쓸지는 정해봐야 할듯 -->
             <section>
-                <form class="search" method="get" action="#">
-                    <input type="text" name="query" placeholder="Search" />
-                </form>
+              <form class="search" method="get" action="#">
+                <input type="text" name="query" placeholder="Search" />
+              </form>
             </section>
-
+      
             <!-- Links -->
             <section>
-                <ul class="links">
-                    <li>
-                        <a href="#">
-                            <h3>Codi Book</h3>
-                            <p>코디를 업로드 하여 공유해봐요!</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="clothes.html">
-                            <h3>Clothes</h3>
-                            <p>자신의 옷을 저장하여 보관하세요!</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Search Clothes</h3>
-                            <p>필터의 기능을 사용하여 원하는 옷을 검색하세요!</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Recommed Clothes</h3>
-                            <p>딥러닝 기술을 사용하여 상황에 맞는 옷을 추천해 드립니다.</p>
-                        </a>
-                    </li>
-                </ul>
+              <ul class="links">
+                <li>
+                  <a href="/bindex">
+                    <h3>Codi Book</h3>
+                    <p>코디를 업로드 하여 공유해봐요!</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="/clothes">
+                    <h3>Clothes</h3>
+                    <p>자신의 옷을 저장하여 보관하세요!</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#file">
+                    <h3>Search Clothes</h3>
+                    <p>필터의 기능을 사용하여 원하는 옷을 검색하세요!</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#reco">
+                    <h3>Recommed Clothes</h3>
+                    <p>딥러닝 기술을 사용하여 상황에 맞는 옷을 추천해 드립니다.</p>
+                  </a>
+                </li>
+              </ul>
             </section>
-
-            <!-- Actions/ 로그인 버튼을 클릭하면 로그인 페이지로 이동해야함 -->
-            <section>
-                <ul class="actions stacked">
-                    <li><a href="login.html" class="button large fit">Log In</a></li>
-                </ul>
-                <ul class="actions stacked">
-                    <li><a href="signup.html" class="button large fit">Sign Up</a></li>
-                </ul>
-            </section>
+          </section>
 
         </section>
 

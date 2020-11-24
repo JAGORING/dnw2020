@@ -13,8 +13,8 @@ const connect = require('./schemas');
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 
-var bindex = require('./routes/bindex');
-var users = require('./routes/users');
+var bindexRouter = require('./routes/bindex');
+var usersRouter = require('./routes/users');
 //const loginRouter = require('./routes/login');
 //const signupRouter = require('./routes/signup');
 //const singleRouter = require('./routes/single');
@@ -64,8 +64,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/users', users);
-app.use('/bindex', bindex);
+app.use('/users', usersRouter);
+app.use('/bindex', bindexRouter);
 
 //app.use('/login', loginRouter);
 //app.use('/signup', signupRouter);
@@ -90,14 +90,3 @@ app.use((err, req, res, next) => {
 app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기 중');
 });
-
-
-app.get("/bindex", async function (req, res) {
-  let users
-  try {
-    users = await db.collection("User").find().toArray()
-  } catch (error) {
-    res.status(500).json({ error: error.toString() })
-  }
-  res.json({ users })
-})
