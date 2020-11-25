@@ -3901,3 +3901,16 @@ color:#b39886 !important;
 		.City{
 			font-size: 1.1rem;
 		}
+
+		.center{
+			text-align: center;
+		}
+
+		.ex_clothe{
+			background-image: url('../../images/ex_clothe.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-blend-mode: overlay;
+			background-color: #707070ce;
+		}

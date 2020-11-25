@@ -20,8 +20,12 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-    res.render('signup', { title: '싱글페이지 - Danawa' });
-    
+  res.render('signup', { title: '가입페이지 - Danawa' });
+  
+});
+router.get('/search', (req, res) => {
+  res.render('search', { title: '검색페이지 - Danawa' });
+  
 });
 
 // GET /user 라우터
