@@ -1,0 +1,50 @@
+.project-tab .modal-header .modal-title{
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.project-tab .modal-header,.project-tab .close{
+    height:60px;
+}
+.fa-asterisk{
+    font-size: 15px;
+    color: rgb(167, 117, 26);
+    margin-right: 5px;
+}
+.select_cate option{
+    font-size: 18px;
+}
+.divbar{
+    margin-bottom: 20px;
+}
+.divbar span{
+    font-size: 18px;
+    font-weight: bold;
+}
+.hr_{
+    margin-top: auto;
+    margin-bottom: auto;
+    border-style: dotted;
+    border-width: 1px;
+    border-color: rgb(233, 233, 233);
+}
+.cls-additem-firstrow label, .img_label{
+    font-size: 20px;
+}
+.inline{
+    display: inline;
+}
+.form-control{
+    height: auto;
+}
+.alert{
+    background-color: rgb(230, 230, 230);
+    margin-bottom: 0px;
+}
+.modal{
+    margin-top:100px;
+    margin-bottom: 100px;
+}
+.form-control-file{
+    background-color: rgba(241, 205, 160, 0.486);
+}

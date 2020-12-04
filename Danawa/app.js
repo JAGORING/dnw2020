@@ -12,6 +12,7 @@ const connect = require('./schemas');
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
+const clothesRouter = require('./routes/clothes');
 
 var bindexRouter = require('./routes/bindex');
 var usersRouter = require('./routes/users');
@@ -24,7 +25,7 @@ const app = express();
 
 
 app.set('port', process.env.PORT || 3000);
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 nunjucks.configure('views', {
   express: app,
   watch: true,
@@ -66,6 +67,7 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/bindex', bindexRouter);
+app.use('/clothes', clothesRouter);
 
 //app.use('/login', loginRouter);
 //app.use('/signup', signupRouter);
@@ -73,7 +75,6 @@ app.use('/bindex', bindexRouter);
 app.set("views", __dirname+ "/views");
 app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
-
 
 app.use((req, res, next) => {
   const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);

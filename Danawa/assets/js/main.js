@@ -187,4 +187,42 @@
 			}
 
 
+			function addCateChange(e) {
+				var head = ["모자","안경"];
+				var sang = ["아우터","기본 티","셔츠","원피스","기타"];
+				var ha = ["바지","치마","기타"];
+				var foot = ["신발","양말"];
+				var other = ["액세서리","가방"];
+				var target = document.getElementById("id-additem_cate");
 			
+				if(e.value == "머리") var d = head;
+				else if(e.value == "상의") var d = sang;
+				else if(e.value == "하의") var d = ha;
+				else if(e.value == "발") var d = foot;
+				else if(e.value == "기타") var d = other;
+			
+				target.options.length = 0;
+			
+				for (x in d) {
+					var opt = document.createElement("option");
+					opt.value = d[x];
+					opt.innerHTML = d[x];
+					target.appendChild(opt);
+				}   
+			}
+
+						function readURL(input) {
+							if (input.files && input.files[0]) {
+							  var reader = new FileReader();
+							  
+							  reader.onload = function(e) {
+								$('#blah').attr('src', e.target.result);
+							  }
+							  
+							  reader.readAsDataURL(input.files[0]); // convert to base64 string
+							}
+						  }
+						  
+						  $("#imgInp").change(function() {
+							readURL(this);
+						  });

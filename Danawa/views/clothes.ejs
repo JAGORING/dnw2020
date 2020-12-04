@@ -2,355 +2,544 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/cloth.css" />
 
-    <title>DANAWA | CLOTHES</title>
+  <title>DANAWA | CLOTHES</title>
 </head>
 
 <body class="single is-preload">
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+  <!-- Wrapper -->
+  <div id="wrapper">
 
-        <!-- Header -->
-        <header id="header">
-            <h1><a href="/">Danawa</a></h1>
-            <nav class="links">
-              <ul>
-                <li><a class="smooth" href="/bindex">Codi Book</a></li>
-                <li><a class="smooth" href="/clothes">Clothes</a></li>
-                <li><a class="smooth" href="/search">Search Clothes</a></li>
-                <li><a class="smooth" href="#reco">Recommed Clothes</a></li>
-                <li><a class="smooth" href="e">뭘로 쓸지 몰라서 일단 남겨둠</a></li>
-              </ul>
-            </nav>
-            <nav class="main">
-              <ul>
-                <li class="search">
-                  <a class="fa-search" href="#search">Search</a>
-                  <form id="search" method="get" action="#">
-                    <input type="text" name="query" placeholder="Search" />
-                  </form>
-                </li>
-                <li class="menu">
-                  <a class="fa-bars" href="#menu">Menu</a>
-                </li>
-              </ul>
-            </nav>
-          </header>
-      
-          <!-- Menu -->
-          <section id="menu">
-      
-            <!-- Search/ 검색바 어떠케 쓸지는 정해봐야 할듯 -->
-            <section>
-              <form class="search" method="get" action="#">
-                <input type="text" name="query" placeholder="Search" />
-              </form>
-            </section>
-      
-            <!-- Links -->
-            <section>
-              <ul class="links">
-                <li>
-                  <a href="/bindex">
-                    <h3>Codi Book</h3>
-                    <p>코디를 업로드 하여 공유해봐요!</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="/clothes">
-                    <h3>Clothes</h3>
-                    <p>자신의 옷을 저장하여 보관하세요!</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="/search">
-                    <h3>Search Clothes</h3>
-                    <p>필터의 기능을 사용하여 원하는 옷을 검색하세요!</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#reco">
-                    <h3>Recommed Clothes</h3>
-                    <p>딥러닝 기술을 사용하여 상황에 맞는 옷을 추천해 드립니다.</p>
-                  </a>
-                </li>
-              </ul>
-            </section>
-          </section>
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="/">Danawa</a></h1>
+      <nav class="links">
+        <ul>
+          <li><a class="smooth" href="/bindex">Codi Book</a></li>
+          <li><a class="smooth" href="/clothes">Clothes</a></li>
+          <li><a class="smooth" href="/search">Search Clothes</a></li>
+          <li><a class="smooth" href="#reco">Recommed Clothes</a></li>
+          <li><a class="smooth" href="e">뭘로 쓸지 몰라서 일단 남겨둠</a></li>
+        </ul>
+      </nav>
+      <nav class="main">
+        <ul>
+          <li class="search">
+            <a class="fa-search" href="#search">Search</a>
+            <form id="search" method="get" action="#">
+              <input type="text" name="query" placeholder="Search" />
+            </form>
+          </li>
+          <li class="menu">
+            <a class="fa-bars" href="#menu">Menu</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-        </section>
+    <!-- Menu -->
+    <section id="menu">
 
-        <!-- Main -->
-        <div id="main">
+      <!-- Search/ 검색바 어떠케 쓸지는 정해봐야 할듯 -->
+      <section>
+        <form class="search" method="get" action="#">
+          <input type="text" name="query" placeholder="Search" />
+        </form>
+      </section>
 
-            <!-- Post -->
-            <article class="post clothes_post">
-                <header>
-                    <div class="title">
-                        <h2>CLOTHES</h2>
-                        <section class="inner-page">
+      <!-- Links -->
+      <section>
+        <ul class="links">
+          <li>
+            <a href="/bindex">
+              <h3>Codi Book</h3>
+              <p>코디를 업로드 하여 공유해봐요!</p>
+            </a>
+          </li>
+          <li>
+            <a href="/clothes">
+              <h3>Clothes</h3>
+              <p>자신의 옷을 저장하여 보관하세요!</p>
+            </a>
+          </li>
+          <li>
+            <a href="/search">
+              <h3>Search Clothes</h3>
+              <p>필터의 기능을 사용하여 원하는 옷을 검색하세요!</p>
+            </a>
+          </li>
+          <li>
+            <a href="#reco">
+              <h3>Recommed Clothes</h3>
+              <p>딥러닝 기술을 사용하여 상황에 맞는 옷을 추천해 드립니다.</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </section>
 
-                            <section id="tabs" class="project-tab">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <nav>
-                                                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                                    <a class="nav-item nav-link active" id="nav-home-tab"
-                                                        data-toggle="tab" href="#nav-home" role="tab"
-                                                        aria-controls="nav-home" aria-selected="true">내 옷장 보기</a>
+    </section>
 
-                                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
-                                                        href="#nav-profile" role="tab" aria-controls="nav-profile"
-                                                        aria-selected="false">코디 작성</a>
+    <!-- Main -->
+    <div id="main">
 
-                                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab"
-                                                        href="#nav-contact" role="tab" aria-controls="nav-contact"
-                                                        aria-selected="false">등록 코디</a>
-                                                </div>
-                                            </nav>
+      <!-- Post -->
+      <article class="post clothes_post">
+        <header>
+          <div class="title">
+            <h2>CLOTHES</h2>
+            <section class="inner-page">
 
-                                            <div class="tab-content container-fluid" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                                                    aria-labelledby="nav-home-tab">
-                                                    <section class="inner-page">
-                                                        <div class="container">
-                                                            <div class="inner-cont center col-lg-12">
-                                                                <button class="btn" onclick="">아이템 추가</button>
-                                                            </div>
+              <section id="tabs" class="project-tab">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <nav>
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                            role="tab" aria-controls="nav-home" aria-selected="true">내 옷장 보기</a>
 
-                                                            <div class="container-fluid clothes">
-                                                                <div class="cate" id="cate">
-                                                                    <input type="button" class="fun-btn" id="item_hat"
-                                                                        value="모자">
-                                                                    <input type="button" class="fun-btn" id="item_acc"
-                                                                        value="액세서리">
-                                                                    <br>
-                                                                    <input type="button" class="fun-btn" id="item_top"
-                                                                        value="상의">
-                                                                    <br>
+                          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                            role="tab" aria-controls="nav-profile" aria-selected="false">코디 작성</a>
 
-                                                                    <input type="button" class="fun-btn" id="item_out"
-                                                                        value="아우터">
-                                                                    <br>
+                          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
+                            role="tab" aria-controls="nav-contact" aria-selected="false">등록 코디</a>
+                        </div>
+                      </nav>
+                      <!-- Modal -->
+                      <div class="modal fade bd-example-modal-lg mt-5 mb-5 p-0" id="addModal" tabindex="-1"
+                        role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="ModalLabel">새 아이템 등록
+                              </h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form action="/clothes/addItem" method="post" id="id-form-additem" >
+                                <div class="row cls-additem-firstrow mt-2 p-3">
+                                  <div class="form-group col-sm-6 ">
+                                    <label for="id-additem-part"><i class="fas fa-asterisk"></i> 부위</label>
+                                    <select name="part" class="form-control select_cate" id="id-additem-part"
+                                      onchange="addCateChange(this)" required>
+                                      <option value="0" selected>선택하세요</option>
+                                      <option value="머리">머리</option>
+                                      <option value="상의">상의</option>
+                                      <option value="하의">하의</option>
+                                      <option value="발">발</option>
+                                      <option value="기타">기타</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-1"></div>
+                                  <div class="form-group col-sm-5">
+                                    <label for="id-additem_cate"><i class="fas fa-asterisk"></i>카테고리</label>
+                                    <select class="form-control select_cate" id="id-additem_cate" name="cate">
+                                      <option value="0" selected>선택하세요</option>
+                                    </select>
+                                  </div>
+                                </div><!-- 첫 줄 end-->
+                                <div class="row divbar p-3">
+                                  <span class="col-md-2" style="text-align: center;">선택 사항</span>
+                                  <hr class="col-md-10 hr_">
+                                </div> 
 
-                                                                    <input type="button" class="fun-btn" id="item_btm"
-                                                                        value="하의">
-                                                                    <br>
-
-                                                                    <input type="button" class="fun-btn" id="item_bag"
-                                                                        value="가방">
-                                                                    <br>
-
-                                                                    <input type="button" class="fun-btn" id="item_sock"
-                                                                        value="양말">
-                                                                    <input type="button" class="fun-btn" id="item_shoe"
-                                                                        value="신발">
-
-                                                                    <input type="button" class="fun-btn" id="item_else"
-                                                                        value="기타">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </section>
-
-                                                </div>
-
-                                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                                    aria-labelledby="nav-profile-tab">
-                                                    <section class="inner-page">
-                                                        <div class="container">
-                                                            <div class="inner-cont center col-lg-12">
-                                                                <button class="btn2" onclick="">아이템 추가</button>
-                                                            </div>
-                                                            <div class="container-fluid clothes2">
-                                                                <div class="row btn-group justify-content-center "
-                                                                    role="group" aria-label="모드 선택"
-                                                                    id="id-div-mode-change">
-                                                                    <button type="button"
-                                                                        class="btn btn_ btn-light col-md-6 active"  
-                                                                        onclick="changeCoordMode(0)">부위 설정</button>
-                                                                    <button type="button"
-                                                                        class="btn btn_ col-md-6 btn-dark"
-                                                                        onclick="changeCoordMode(1)">코디하기</button>
-                                                                </div>            
-
-                                                                    <!--부위 설정-->
-                                                                    <div id="id-div-char-win" class="coord-win main mb-3">
-                                                                      <div class="coord-part coord-part-main clickable blank" id="id-coord-head" value="모자">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/head-f.png" alt="머리"/>
-                                                                      </div>
-                                                                      <div class="coord-part coord-part-main coord-part-top clickable blank" id="id-coord-top1" value="상의">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/top1-f.png" alt="상의 I"/>
-                                                                      </div>
-                                                                      <div class="coord-part coord-part-sub coord-part-top clickable blank" id="id-coord-top2" value="상의">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/top2-f.png" alt="상의 II"/>
-                                                                      </div>
-                                                                      <div class="coord-part coord-part-main coord-part-bottom clickable blank" id="id-coord-bottom1" value="하의">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/bottom1-f.png" alt="하의 I"/>
-                                                                      </div>
-                                                                      <div class="coord-part coord-part-sub coord-part-bottom clickable blank" id="id-coord-bottom2" value="하의">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="{../../images/clothes-icons/bottom2-f.png" alt="하의 II"/>
-                                                                      </div>
-                                                                      <div class="coord-part coord-part-main clickable blank" id="id-coord-foot1" value="신발">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/foot1-f.png" alt="신발"/>
-                                                                      </div>
-                                                                      <div class="coord-part coord-part-side clickable blank" id="id-coord-foot2" value="양말">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/foot2-f.png" alt="양말"/>
-                                                                      </div>
-                                                                    
-                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc1" value="액세서리">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/acc1-f.png" alt="액세서리1"/>
-                                                                      </div>
-                                                                    
-                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc2" value="액세서리">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/acc2-f.png" alt="액세서리2"/>
-                                                                      </div>
-                                                                    
-                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc3" value="액세서리">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/acc3-f.png" alt="액세서리3"/>
-                                                                      </div>
-                                                                      
-                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc4" value="가방">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/acc4-f.png" alt="가방"/>
-                                                                      </div>
-                                                                    
-                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc5" value="액세서리">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/acc5-f.png" alt="액세서리5"/>
-                                                                      </div>
-                                                                    
-                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc6" value="액세서리">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/acc6-f.png" alt="액세서리6"/>
-                                                                      </div>
-                                                                    
-                                                                      <div class="coord-part coord-part-outer clickable blank" id="id-coord-outer" value="아우터">
-                                                                        <div class="del"><i class="fas fa-times"></i></div>
-                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                                                        <img class="coord-img" src="../../images/clothes-icons/outer-f.png" alt="아우터"/>
-                                                                      </div>                                                                                                                                                                                                                                               
-                                                                  </div>
-    
-                                                                    <div id="id-div-coord-win"
-                                                                        class="coord-win coord-post mb-3" id="tab1"
-                                                                        style=" display: none;">
-                                                                        <div class="row col-8 btn-group season"
-                                                                            id="buttons " role="group" aria-label="배경 선택">
-                                                                            <button type="button"
-                                                                                class="col-md-2 btn btn-outline-success btn-sm"
-                                                                                onclick="ChangeBack('1')">봄</button>
-                                                                            <button type="button"
-                                                                                class="col-md-2 btn btn-outline-primary btn-sm"
-                                                                                onclick="ChangeBack('2')">여름</button>
-                                                                            <button type="button"
-                                                                                class="col-md-2 btn btn-outline-warning btn-sm"
-                                                                                onclick="ChangeBack('3')">가을</button>
-                                                                            <button type="button"
-                                                                                class="col-md-2 btn btn-outline-secondary btn-sm"
-                                                                                onclick="ChangeBack('4')">겨울</button>
-                                                                            <button type="button"
-                                                                                class="col-md-2 btn btn-outline-dark btn-sm"
-                                                                                onclick="ChangeBack('5')">실내</button>
-                                                                        </div>
-    
-                                                                        <div class="row save-group p-0 m-0 col-lg-4">
-                                                                            <button type="button"
-                                                                                class="btn col-6 btn-save1 btn-sm"
-                                                                                onclick="">데일리룩 저장</button>
-                                                                            <button type="button"
-                                                                                class="btn col-6 btn-save2 btn-sm"
-                                                                                onclick="">코디 저장</button>
-                                                                        </div>
-                                                                    </div>                            
-                                                            </div>                                                            
-                                                        </div>                                                        
-                                                    </section>
-                                                </div>
-
-                                                <div class="tab-pane fade " id="nav-contact" role="tabpanel"
-                                                    aria-labelledby="nav-contact-tab">
-
-                                                </div>
-
-                                            </div>
+                                <div class="row mb-3 p-3">
+                                  <div class="col-3 ">
+                                    <label for="id-additem-color">색상</label>
+                                    <input type="color" name="color" class="form-control p-2" style="height: 35px;"
+                                      id="id-additem-color" />
+                                  </div>
+                                  <div class="col-4">
+                                    <label>착용 가능 계절</label>
+                                    <div class="form-control p-2">
+                                      <div class="row">
+                                        <div class="form-check form-check-inline inline col-5">
+                                          <input class="form-check-input" type="checkbox" name="season"
+                                            id="id-additem-season1" value="봄" checked>
+                                          <label class="form-check-label" for="id-additem-season1">봄</label>
                                         </div>
+
+                                        <div class="form-check form-check-inline inline col-5">
+                                          <input class="form-check-input" type="checkbox" name="season"
+                                            id="id-additem-season2" value="여름">
+                                          <label class="form-check-label" for="id-additem-season2">여름</label>
+                                        </div>
+                                      </div>
+                                      <div class="row mt-3">
+
+                                        <div class="form-check form-check-inline inline col-5">
+                                          <input class="form-check-input" type="checkbox" name="season"
+                                            id="id-additem-season3" value="가을">
+                                          <label class="form-check-label" for="id-additem-season3">가을</label>
+                                        </div>
+                                        <div class="form-check form-check-inline inline col-5">
+                                          <input class="form-check-input" type="checkbox" name="season"
+                                            id="id-additem-season4" value="겨울">
+                                          <label class="form-check-label" for="id-additem-season4">겨울</label>
+                                        </div>
+                                      </div>
                                     </div>
+                                  </div>
+
+                                  <div class="col-5 ">
+                                    <label>무늬</label>
+                                    <div class="form-control p-2">
+                                      <div class="row">
+
+                                        <div class="form-check form-check-inline inline col-5">
+                                          <input class="form-check-input" type="radio" name="pattern"
+                                            id="id-additem-pattern1" value="solid" checked>
+                                          <label class="form-check-label" for="id-additem-pattern1">Solid</label>
+                                        </div>
+                                        <div class="form-check form-check-inline inline col-5">
+                                          <input class="form-check-input" type="radio" name="pattern"
+                                            id="id-additem-pattern2" value="stripe">
+                                          <label class="form-check-label" for="id-additem-pattern2">Stripe</label>
+                                        </div>
+                                      </div>
+                                      <div class="row mt-3">
+
+                                        <div class="form-check form-check-inline inline col-5">
+                                          <input class="form-check-input" type="radio" name="pattern"
+                                            id="id-additem-pattern3" value="dot">
+                                          <label class="form-check-label" for="id-additem-pattern3">Dot</label>
+                                        </div>
+                                        <div class="form-check form-check-inline inline col-5">
+                                          <input class="form-check-input" type="radio" name="pattern"
+                                            id="id-additem-pattern4" value="print">
+                                          <label class="form-check-label" for="id-additem-pattern4">Printing</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div><!-- 둘째 줄 end-->
+
+
+                                <div class="row mb-3 p-3">
+                                  <div class="col-3">
+                                    <label>색상 타입</label>
+                                    <div class="form-control">
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="colortype"
+                                          id="id-additem-colortype1" value="true" checked>
+                                        <label class="form-check-label" for="id-additem-colortype1">단색</label>
+                                      </div>
+                                      <div class="form-check form-check-inline mt-3">
+                                        <input class="form-check-input" type="radio" name="colortype"
+                                          id="id-additem-colortype2" value="false">
+                                        <label class="form-check-label" for="id-additem-colortype2">복합</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-2">
+                                    <label for="id-additem-texture">재질</label>
+                                    <input class="form-control" type="text" name="texture" id="id-additem-texture">
+                                  </div>
+                                  <div class="col-2">
+                                    <label for="id-additem-brand">브랜드</label>
+                                    <input class="form-control" type="text" name="brand" id="id-additem-brand">
+                                  </div>
+                                  <div class="col-5">
+                                    <label for="id-additem-desc">메모</label>
+                                    <textarea rows="3" class="form-control" name="descript" id="id-additem-desc"
+                                      placeholder="메모를 작성하세요."></textarea>
+                                  </div>
+                                </div><!-- 셋째 줄 end-->
+
+                                <div id="id-form-image">
+                                  <div class="row p-3">
+                                    <div class="col-4">
+                                      <div class="row mb-3">
+                                        <div class="col-12" id="add_item_pic">
+                                          <label for="id-input-image" class="img_label"><i class="fas fa-asterisk"></i>
+                                            옷
+                                            사진 등록</label>
+                                          <div class="form-group">
+                                            <input class="form-control-file btn" type="file" accept="image/*" required
+                                              name="image" id="imgInp" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-8">
+                                      <label class="img_label"><i class="fas fa-asterisk"></i> 저장할 사진 미리보기 </label>
+                                      <div class="form-control">
+                                        <div class="row justify-content-center">
+                                          <div class="col-12">
+                                            <div class="custom-control">
+                                              <label class="custom-label">사진</label>
+                                            </div>
+                                          </div>
+
+                                        </div>
+                                        <div class="row pl-5 pr-5 pb-2">
+                                          <div class="col-12">
+                                            <img style="width: 100%; height: auto;" id="blah"
+                                              src="images/NoImage.jpg" />
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                      <div class="alert">
+                                        <h4 class="alert-heading">사진을 깔끔하게 정리하고 싶으신가요?</h4>
+                                        <span>아래 사이트로 이동하여 배경을 제거하실 수 있습니다.</span>
+                                        <hr>
+                                        <span class="mb-0"><a href="https://www.remove.bg/" class="alert-link">Click -
+                                            remove.bg</a></span><br>
+                                        <span class="mb-0"><a href="https://online.photoscissors.com/"
+                                            class="alert-link">Click -
+                                            PhotoScissors Online</a></span>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
-                            </section>
-                        </section>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn-se" data-dismiss="modal">Close</button>
+                                  <input type="submit" class="btn-pr" value="Save changes">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
+
+                      <div class="tab-content container-fluid" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                          aria-labelledby="nav-home-tab">
+                          <section class="inner-page">
+                            <div class="container">
+                              <div class="inner-cont center">
+                                <button type="button" class="btn" data-toggle="modal" data-target="#addModal">
+                                  아이템 추가
+                                </button>
+                              </div>
+
+                              <div class="container-fluid clothes">
+                                <div class="cate" id="cate">
+                                  <input type="button" class="fun-btn" id="item_hat" value="모자">
+                                  <input type="button" class="fun-btn" id="item_acc" value="액세서리">
+                                  <div class="br">
+                                    <input type="button" class="fun-btn" id="item_top" value="상의">
+                                    <div class="br">
+
+                                      <input type="button" class="fun-btn" id="item_out" value="아우터">
+                                      <div class="br">
+                                        <div class="br">
+                                          <input type="button" class="fun-btn" id="item_btm" value="하의">
+                                          <div class="br">
+
+                                            <input type="button" class="fun-btn" id="item_bag" value="가방">
+                                            <div class="br">
+
+                                              <input type="button" class="fun-btn" id="item_sock" value="양말">
+                                              <input type="button" class="fun-btn" id="item_shoe" value="신발">
+
+                                              <input type="button" class="fun-btn" id="item_else" value="기타">
+                                            </div>
+                                          </div>
+                                        </div>
+                          </section>
+                        </div>
+
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                          <section class="inner-page">
+                            <div class="container">
+                              <div class="inner-cont center col-lg-12">
+                                <button type="button" class="btn" data-toggle="modal" data-target="#addModal">
+                                  아이템 추가
+                                </button>
+                              </div>
+                              <div class="container-fluid clothes2">
+                                <div class="row btn-group justify-content-center " role="group" aria-label="모드 선택"
+                                  id="id-div-mode-change">
+                                  <button type="button" class="btn btn_ btn-light col-md-6 active"
+                                    onclick="changeCoordMode(0)">부위 설정</button>
+                                  <button type="button" class="btn btn_ col-md-6 btn-dark"
+                                    onclick="changeCoordMode(1)">코디하기</button>
+                                </div>
+
+                                <!--부위 설정-->
+                                <div id="id-div-char-win" class="coord-win main mb-3">
+                                  <div class="coord-part coord-part-main clickable blank" id="id-coord-head" value="모자">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/head-f.png" alt="머리" />
+                                  </div>
+                                  <div class="coord-part coord-part-main coord-part-top clickable blank"
+                                    id="id-coord-top1" value="상의">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/top1-f.png" alt="상의 I" />
+                                  </div>
+                                  <div class="coord-part coord-part-sub coord-part-top clickable blank"
+                                    id="id-coord-top2" value="상의">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/top2-f.png" alt="상의 II" />
+                                  </div>
+                                  <div class="coord-part coord-part-main coord-part-bottom clickable blank"
+                                    id="id-coord-bottom1" value="하의">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/bottom1-f.png" alt="하의 I" />
+                                  </div>
+                                  <div class="coord-part coord-part-sub coord-part-bottom clickable blank"
+                                    id="id-coord-bottom2" value="하의">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="{../../images/clothes-icons/bottom2-f.png"
+                                      alt="하의 II" />
+                                  </div>
+                                  <div class="coord-part coord-part-main clickable blank" id="id-coord-foot1"
+                                    value="신발">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/foot1-f.png" alt="신발" />
+                                  </div>
+                                  <div class="coord-part coord-part-side clickable blank" id="id-coord-foot2"
+                                    value="양말">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/foot2-f.png" alt="양말" />
+                                  </div>
+
+                                  <div class="coord-part coord-part-side coord-part-acc clickable blank"
+                                    id="id-coord-acc1" value="액세서리">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/acc1-f.png" alt="액세서리1" />
+                                  </div>
+
+                                  <div class="coord-part coord-part-side coord-part-acc clickable blank"
+                                    id="id-coord-acc2" value="액세서리">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/acc2-f.png" alt="액세서리2" />
+                                  </div>
+
+                                  <div class="coord-part coord-part-side coord-part-acc clickable blank"
+                                    id="id-coord-acc3" value="액세서리">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/acc3-f.png" alt="액세서리3" />
+                                  </div>
+
+                                  <div class="coord-part coord-part-side coord-part-acc clickable blank"
+                                    id="id-coord-acc4" value="가방">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/acc4-f.png" alt="가방" />
+                                  </div>
+
+                                  <div class="coord-part coord-part-side coord-part-acc clickable blank"
+                                    id="id-coord-acc5" value="액세서리">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/acc5-f.png" alt="액세서리5" />
+                                  </div>
+
+                                  <div class="coord-part coord-part-side coord-part-acc clickable blank"
+                                    id="id-coord-acc6" value="액세서리">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/acc6-f.png" alt="액세서리6" />
+                                  </div>
+
+                                  <div class="coord-part coord-part-outer clickable blank" id="id-coord-outer"
+                                    value="아우터">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/outer-f.png" alt="아우터" />
+                                  </div>
+                                </div>
+
+                                <div id="id-div-coord-win" class="coord-win coord-post mb-3" id="tab1"
+                                  style=" display: none;">
+                                  <div class="row col-8 btn-group season" id="buttons " role="group" aria-label="배경 선택">
+                                    <button type="button" class="col-md-2 btn btn-outline-success btn-sm"
+                                      onclick="ChangeBack('1')">봄</button>
+                                    <button type="button" class="col-md-2 btn btn-outline-primary btn-sm"
+                                      onclick="ChangeBack('2')">여름</button>
+                                    <button type="button" class="col-md-2 btn btn-outline-warning btn-sm"
+                                      onclick="ChangeBack('3')">가을</button>
+                                    <button type="button" class="col-md-2 btn btn-outline-secondary btn-sm"
+                                      onclick="ChangeBack('4')">겨울</button>
+                                    <button type="button" class="col-md-2 btn btn-outline-dark btn-sm"
+                                      onclick="ChangeBack('5')">실내</button>
+                                  </div>
+
+                                  <div class="row save-group p-0 m-0 col-lg-4">
+                                    <button type="button" class="btn col-6 btn-save1 btn-sm" onclick="">데일리룩 저장</button>
+                                    <button type="button" class="btn col-6 btn-save2 btn-sm" onclick="">코디 저장</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+
+                        <div class="tab-pane fade " id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+                        </div>
+
+                      </div>
                     </div>
-                </header>
-                </main>
-                <footer>
-                    <ul class="stats">
-                        <li><a href="#">General</a></li>
-                        <li><a href="#" class="icon solid fa-heart">28</a></li>
-                        <li><a href="#" class="icon solid fa-comment">128</a></li>
-                    </ul>
-                </footer>
-            </article>
+                  </div>
+                </div>
+              </section>
+            </section>
 
-        </div>
-
-        <!-- Footer -->
-        <section id="footer">
-            <ul class="icons">
-                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
-                <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
-            <p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a
-                    href="http://unsplash.com">Unsplash</a>.</p>
-        </section>
+          </div>
+        </header>
+        </main>
+        <footer>
+          <ul class="stats">
+            <li><a href="#">General</a></li>
+            <li><a href="#" class="icon solid fa-heart">28</a></li>
+            <li><a href="#" class="icon solid fa-comment">128</a></li>
+          </ul>
+        </footer>
+      </article>
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/browser.min.js"></script>
-    <script src="/js/breakpoints.min.js"></script>
-    <script src="/js/util.js"></script>
-    <script src="/js/main.js"></script>
+    <!-- Footer -->
+    <section id="footer">
+      <ul class="icons">
+        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+        <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+      <p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a
+          href="http://unsplash.com">Unsplash</a>.</p>
+    </section>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/browser.min.js"></script>
+  <script src="/js/breakpoints.min.js"></script>
+  <script src="/js/util.js"></script>
+  <script src="/js/main.js"></script>
 
 </body>
 
