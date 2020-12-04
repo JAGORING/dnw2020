@@ -175,51 +175,127 @@
                                                                     role="group" aria-label="모드 선택"
                                                                     id="id-div-mode-change">
                                                                     <button type="button"
-                                                                        class="btn btn_ btn-light col-md-6 active"
+                                                                        class="btn btn_ btn-light col-md-6 active"  
                                                                         onclick="changeCoordMode(0)">부위 설정</button>
                                                                     <button type="button"
                                                                         class="btn btn_ col-md-6 btn-dark"
                                                                         onclick="changeCoordMode(1)">코디하기</button>
-                                                                </div>
+                                                                </div>            
 
-                                                                <div id="id-div-char-win"
-                                                                    class="coord-win main justify-content-center">
-                                                                </div>
-
-                                                                <div id="id-div-coord-win"
-                                                                    class="coord-win coord-post mb-3" id="tab1"
-                                                                    style=" display: none;">
-                                                                    <div class="row col-8 btn-group season"
-                                                                        id="buttons " role="group" aria-label="배경 선택">
-                                                                        <button type="button"
-                                                                            class="col-md-2 btn btn-outline-success btn-sm"
-                                                                            onclick="ChangeBack('1')">봄</button>
-                                                                        <button type="button"
-                                                                            class="col-md-2 btn btn-outline-primary btn-sm"
-                                                                            onclick="ChangeBack('2')">여름</button>
-                                                                        <button type="button"
-                                                                            class="col-md-2 btn btn-outline-warning btn-sm"
-                                                                            onclick="ChangeBack('3')">가을</button>
-                                                                        <button type="button"
-                                                                            class="col-md-2 btn btn-outline-secondary btn-sm"
-                                                                            onclick="ChangeBack('4')">겨울</button>
-                                                                        <button type="button"
-                                                                            class="col-md-2 btn btn-outline-dark btn-sm"
-                                                                            onclick="ChangeBack('5')">실내</button>
-                                                                    </div>
-
-                                                                    <div class="row save-group p-0 m-0 col-lg-4">
-                                                                        <button type="button"
-                                                                            class="btn col-6 btn-save1 btn-sm"
-                                                                            onclick="">데일리룩 저장</button>
-                                                                        <button type="button"
-                                                                            class="btn col-6 btn-save2 btn-sm"
-                                                                            onclick="">코디 저장</button>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
+                                                                    <!--부위 설정-->
+                                                                    <div id="id-div-char-win" class="coord-win main mb-3">
+                                                                      <div class="coord-part coord-part-main clickable blank" id="id-coord-head" value="모자">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/head-f.png" alt="머리"/>
+                                                                      </div>
+                                                                      <div class="coord-part coord-part-main coord-part-top clickable blank" id="id-coord-top1" value="상의">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/top1-f.png" alt="상의 I"/>
+                                                                      </div>
+                                                                      <div class="coord-part coord-part-sub coord-part-top clickable blank" id="id-coord-top2" value="상의">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/top2-f.png" alt="상의 II"/>
+                                                                      </div>
+                                                                      <div class="coord-part coord-part-main coord-part-bottom clickable blank" id="id-coord-bottom1" value="하의">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/bottom1-f.png" alt="하의 I"/>
+                                                                      </div>
+                                                                      <div class="coord-part coord-part-sub coord-part-bottom clickable blank" id="id-coord-bottom2" value="하의">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="{../../images/clothes-icons/bottom2-f.png" alt="하의 II"/>
+                                                                      </div>
+                                                                      <div class="coord-part coord-part-main clickable blank" id="id-coord-foot1" value="신발">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/foot1-f.png" alt="신발"/>
+                                                                      </div>
+                                                                      <div class="coord-part coord-part-side clickable blank" id="id-coord-foot2" value="양말">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/foot2-f.png" alt="양말"/>
+                                                                      </div>
+                                                                    
+                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc1" value="액세서리">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/acc1-f.png" alt="액세서리1"/>
+                                                                      </div>
+                                                                    
+                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc2" value="액세서리">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/acc2-f.png" alt="액세서리2"/>
+                                                                      </div>
+                                                                    
+                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc3" value="액세서리">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/acc3-f.png" alt="액세서리3"/>
+                                                                      </div>
+                                                                      
+                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc4" value="가방">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/acc4-f.png" alt="가방"/>
+                                                                      </div>
+                                                                    
+                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc5" value="액세서리">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/acc5-f.png" alt="액세서리5"/>
+                                                                      </div>
+                                                                    
+                                                                      <div class="coord-part coord-part-side coord-part-acc clickable blank" id="id-coord-acc6" value="액세서리">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/acc6-f.png" alt="액세서리6"/>
+                                                                      </div>
+                                                                    
+                                                                      <div class="coord-part coord-part-outer clickable blank" id="id-coord-outer" value="아우터">
+                                                                        <div class="del"><i class="fas fa-times"></i></div>
+                                                                        <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                                                        <img class="coord-img" src="../../images/clothes-icons/outer-f.png" alt="아우터"/>
+                                                                      </div>                                                                                                                                                                                                                                               
+                                                                  </div>
+    
+                                                                    <div id="id-div-coord-win"
+                                                                        class="coord-win coord-post mb-3" id="tab1"
+                                                                        style=" display: none;">
+                                                                        <div class="row col-8 btn-group season"
+                                                                            id="buttons " role="group" aria-label="배경 선택">
+                                                                            <button type="button"
+                                                                                class="col-md-2 btn btn-outline-success btn-sm"
+                                                                                onclick="ChangeBack('1')">봄</button>
+                                                                            <button type="button"
+                                                                                class="col-md-2 btn btn-outline-primary btn-sm"
+                                                                                onclick="ChangeBack('2')">여름</button>
+                                                                            <button type="button"
+                                                                                class="col-md-2 btn btn-outline-warning btn-sm"
+                                                                                onclick="ChangeBack('3')">가을</button>
+                                                                            <button type="button"
+                                                                                class="col-md-2 btn btn-outline-secondary btn-sm"
+                                                                                onclick="ChangeBack('4')">겨울</button>
+                                                                            <button type="button"
+                                                                                class="col-md-2 btn btn-outline-dark btn-sm"
+                                                                                onclick="ChangeBack('5')">실내</button>
+                                                                        </div>
+    
+                                                                        <div class="row save-group p-0 m-0 col-lg-4">
+                                                                            <button type="button"
+                                                                                class="btn col-6 btn-save1 btn-sm"
+                                                                                onclick="">데일리룩 저장</button>
+                                                                            <button type="button"
+                                                                                class="btn col-6 btn-save2 btn-sm"
+                                                                                onclick="">코디 저장</button>
+                                                                        </div>
+                                                                    </div>                            
+                                                            </div>                                                            
+                                                        </div>                                                        
                                                     </section>
                                                 </div>
 

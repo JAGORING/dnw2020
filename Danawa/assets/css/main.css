@@ -3799,6 +3799,159 @@ color:#b39886 !important;
 			margin-left: 40%;
 		}
 		
+
+		/*부위 설정*/
+		#id-div-char-win .blank .add {
+			display: block;
+			opacity: 1;
+		}
+		
+		#id-div-char-win .add {
+			display: none;
+			position: absolute;
+			width: 100%;
+			font-size: 1.1em;
+			z-index: 1;
+		}
+		
+		#id-div-char-win .del {
+			position: absolute;
+			right: 3%;
+			top: 0;
+		}
+		
+		#id-div-char-win .clickable {
+			cursor: pointer;
+		}
+		
+		#id-div-char-win .coord-part {
+			border: 1px dashed gray;
+		} 
+		
+		.coord-part {
+			position: absolute;
+			display: inline-block;
+			border-radius: 15px;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		#id-div-coord-win .coord-part {
+			border: 0;
+		}
+	
+		/*
+		#id-div-coord-win .coord-part.outline {
+			border-radius: 10px;
+			box-shadow: 0 0 0 0.5px lightgrey;
+		}
+		*/
+		
+		.coord-part-main {
+			left: 34%;
+		}
+		
+		.coord-part-sub {
+			left: 17%;
+		}
+		
+		.coord-part-side {
+			left: 50%;
+		}
+		
+		.coord-part-top {
+			width: 15%;
+			top: 35%;
+		}
+		
+		.coord-part-bottom {
+			width: 15%;
+			top: 55%;
+		}
+		
+		.coord-part-acc {
+			width: 8%;
+		}
+		
+		.blank img {
+			opacity: 0.4;
+		}
+		
+		.blank .del {
+			display: none;
+		}
+		
+		#id-coord-head {
+			width: 12%;
+			top: 31%;
+			left: 70%;
+		}
+		
+		/*
+		#id-coord-top2 {
+		
+		}
+		
+		#id-coord-bottom1 {
+		
+		}
+		
+		#id-coord-bottom1 {
+		
+		}
+		*/
+		
+		#id-coord-foot1 {
+			width: 7%;
+			top: 70%;
+			left: 34%;
+			padding: 1% 0% 1% 0%;
+		}
+		
+		#id-coord-foot2 {
+			width: 7%;
+			top: 70%;
+			left: 42%;
+			padding: 1% 0% 1% 0%;
+		}
+		
+		#id-coord-acc1,
+		#id-coord-acc2 {
+			top: 33%;
+			padding: 1% 0% 1% 0%;
+		}
+		
+		#id-coord-acc5,
+		#id-coord-acc6 {
+			top: 69%;
+			padding: 1% 0% 1% 0%;
+		}
+		
+		#id-coord-acc2,
+		#id-coord-acc6 {
+			left: 59%;
+		}
+		
+		#id-coord-acc3 {
+			width: 4%;
+			top: 48%;
+		}
+		
+		#id-coord-acc4 {
+			width: 12%;
+			top: 50%;
+			left: 55%;
+		}
+
+		#id-coord-outer {
+			width: 16%;
+			top: 49%;
+			left: 69%;
+		}
+		
+
 		.text-center {
 			text-align: center!important;
 		}
@@ -3835,8 +3988,8 @@ color:#b39886 !important;
 			margin-top: 40px;
 			margin-right: auto;
 			width: 80%; 
-			margin-left:auto; 
-			height:700px; 
+			margin-left:auto;
+			height:650px; 
 			display: flex; 
 			background-color: rgb(236, 235, 232);
 		}
