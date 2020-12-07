@@ -3,6 +3,17 @@ const router = express.Router();
 require('express-session');
 const cloth = require('../schemas/cloth');
 
+
+
+router.get('/', function(req, res, next) {
+  cloth.find({}, function (err, a) {
+      console.log("옷 불러올 수 있나?", a);
+      res.render('clothes');
+      
+  });
+});
+
+
 router.post('/addItem', (req, res) => {
 
   const post = new cloth({

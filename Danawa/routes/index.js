@@ -46,8 +46,5 @@ router.get('/write', (req, res) => {
   res.render('write', { title: '글 등록 - Danawa' });
 });
 
-router.get('/clothes', (req, res) => {
-  res.render('clothes', { title: '옷장 - Danawa' });
-});
 
 module.exports = router;
