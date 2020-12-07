@@ -10,6 +10,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const connect = require('./schemas');
 
+const writeRouter = require('./routes/bindex');
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const clothesRouter = require('./routes/clothes');
@@ -68,6 +69,8 @@ app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/bindex', bindexRouter);
 app.use('/clothes', clothesRouter);
+app.use('/write', writeRouter);
+
 
 //app.use('/login', loginRouter);
 //app.use('/signup', signupRouter);

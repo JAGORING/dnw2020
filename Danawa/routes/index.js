@@ -33,9 +33,7 @@ router.get('/single', (req, res) => {
   res.render('single', { title: '싱글페이지 - Danawa' });
 });
 
-router.get('/bindex', (req, res) => {
-  res.render('bindex', { title: '코디북 - Danawa' });
-});
+
 router.get('/board', (req, res) => {
   res.render('board', { title: '코디북 - Danawa' });
 });
