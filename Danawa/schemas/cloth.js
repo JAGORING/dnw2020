@@ -12,6 +12,9 @@ const clothSchema = new Schema({
     solid :Boolean,  // 단색인지 아닌지
     texture:String,
     brand :String,
+    // photos:{
+    //     // data: Buffer,
+    //     // contentType: String },
     descript :String,  // 메모
 });
 

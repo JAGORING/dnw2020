@@ -119,15 +119,17 @@
     <th>내용</th>
     <th>작성자</th>
   </tr>
-  <% if (board !== null){
+  <!-- <% if (board !== null){
     for(let i = 0; i < board.length; i++) { %>
   <tr>
     <td><a href=`/board/<%= board[i]._id%`><%=board[i].title%></a></td>
     <td><%=board[i].contents%></td>
     <td><%=board[i].author%></td>
   </tr>
-  <%  }} %>
+  <%  }} %> -->
  
+  <% board %>
+  <%= board %>
 </tbody>      
 </table>
 <a href="/write">글 쓰기 페이지 이동</a>
