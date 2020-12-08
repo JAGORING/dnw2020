@@ -1,0 +1,60 @@
+.table1{
+    width: 90%;
+}
+.post .title .h3{
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px ;
+}
+.post .title p{
+    font-size: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+a:hover{
+    text-decoration: none;
+    text-decoration-line: none;
+}
+a{
+    border-style: none;
+}
+.b_up{
+    float: right;
+    color: rgb(75, 75, 75);
+    font-size: 16px;
+    font-weight: bold;
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+.dis1{
+    text-align: center;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 17px;
+    height: 40px;
+    background-color: #f1f1e5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.dis2{
+    padding: 20px;
+    font-size: 18px;
+    height:250px;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+}
+.updbt{
+    margin:10px;
+}
+.bo_co{
+padding: 0;
+margin: 0;
+font-size: 15px;
+font-weight: bold;
+}
+.hr{
+    padding-bottom: 3px;
+    margin: 0;
+    width: 90%;
+}

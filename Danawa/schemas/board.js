@@ -6,7 +6,7 @@ const boardSchema = new Schema({
     title: String,
     contents: String,
     author: String,
-    board_date: {type: Date, default: Date.now()},
+    board_date: {type: Date, default: Date.now},
     comments : [{contents : String, author : String, comment_date : {type : Date, default : Date.now()}}]
 });
 

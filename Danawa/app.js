@@ -16,7 +16,6 @@ const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const clothesRouter = require('./routes/clothes');
 var bindexRouter = require('./routes/bindex');
-var usersRouter = require('./routes/users');
 
 dotenv.config();
 
@@ -85,7 +84,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //render use
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/users', usersRouter);
 app.use('/bindex', bindexRouter);
 app.use('/clothes', clothesRouter);
 app.use('/write', writeRouter);
