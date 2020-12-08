@@ -119,17 +119,20 @@
     <th>내용</th>
     <th>작성자</th>
   </tr>
-  <!-- <% if (board !== null){
-    for(let i = 0; i < board.length; i++) { %>
-  <tr>
-    <td><a href=`/board/<%= board[i]._id%`><%=board[i].title%></a></td>
-    <td><%=board[i].contents%></td>
-    <td><%=board[i].author%></td>
-  </tr>
-  <%  }} %> -->
- 
-  <% board %>
-  <%= board %>
+  <!-- <% for (var i = 0; i<5;i++) { %>
+    <h1>
+      아 게시판 문법 그래서 어케만듦 ;;;
+    </h1>
+    <% } %> -->
+    <% if (a !== null){
+      for(let i = 0; i < a.length; i++) { %>
+    <tr>
+      <td><a href="/board/<%= a[i]._id%>"><%=a[i].title%></a></td>
+      <td><%=a[i].contents%></td>
+      <td><%=a[i].author%></td>
+    </tr>
+    <%  }} %> 
+    
 </tbody>      
 </table>
 <a href="/write">글 쓰기 페이지 이동</a>
