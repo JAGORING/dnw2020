@@ -107,6 +107,7 @@
 				}
 			});
 
+			
 })(jQuery);
 
 			function tabToAcor(id) {
@@ -226,3 +227,7 @@
 						  $("#imgInp").change(function() {
 							readURL(this);
 						  });
+
+						
+
+						  

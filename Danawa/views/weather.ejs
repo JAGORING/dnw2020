@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/cloth.css" />
+
+    <title>DANAWA | CLOTHES</title>
+</head>
+
+<body class="single is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="/">Danawa</a></h1>
+            <nav class="links">
+                <ul>
+                    <li><a class="smooth" href="/bindex">Codi Book</a></li>
+                    <li><a class="smooth" href="/clothes">Clothes</a></li>
+                    <li><a class="smooth" href="/search">Search Clothes</a></li>
+                    <li><a class="smooth" href="#reco">Recommed Clothes</a></li>
+                    <li><a class="smooth" href="e">뭘로 쓸지 몰라서 일단 남겨둠</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Search</a>
+                        <form id="search" method="get" action="#">
+                            <input type="text" name="query" placeholder="Search" />
+                        </form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <section id="menu">
+
+            <!-- Search/ 검색바 어떠케 쓸지는 정해봐야 할듯 -->
+            <section>
+                <form class="search" method="get" action="#">
+                    <input type="text" name="query" placeholder="Search" />
+                </form>
+            </section>
+
+            <!-- Links -->
+            <section>
+                <ul class="links">
+                    <li>
+                        <a href="/bindex">
+                            <h3>Codi Book</h3>
+                            <p>코디를 업로드 하여 공유해봐요!</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/clothes">
+                            <h3>Clothes</h3>
+                            <p>자신의 옷을 저장하여 보관하세요!</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/search">
+                            <h3>Search Clothes</h3>
+                            <p>필터의 기능을 사용하여 원하는 옷을 검색하세요!</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#reco">
+                            <h3>Recommed Clothes</h3>
+                            <p>딥러닝 기술을 사용하여 상황에 맞는 옷을 추천해 드립니다.</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+        </section>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <article class="post clothes_post">
+                <header>
+                    <div class="title">
+                        <h2>오늘 날씨에 맞는 코디 추천</h2>
+                        <section class="inner-page">
+                            <article class="w_post">
+                                <div class="weather1">
+                                    <p> 오늘 <span class="City"></span>의<br> 날씨는 <span class="CurrIcon"></span>이고 기온은
+                                        <span class="CurrTemp"></span>입니다.</p>
+                                </div>
+                            </article>
+
+                            <section id="tabs" class="project-tab1">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <nav>
+                                                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                                    <a class="nav-item nav-link active" id="nav-home-tab"
+                                                        data-toggle="tab" href="#nav-home" role="tab"
+                                                        aria-controls="nav-home" aria-selected="true">~ 4 °C</a>
+
+                                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
+                                                        href="#nav-profile" role="tab" aria-controls="nav-profile"
+                                                        aria-selected="false">5 ~ 8 °C</a>
+
+                                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab"
+                                                        href="#nav-contact" role="tab" aria-controls="nav-contact"
+                                                        aria-selected="false">9 ~ 11 °C</a>
+
+                                                    <a class="nav-item nav-link" id="nav-tab" data-toggle="tab"
+                                                        href="#nav-" role="tab" aria-controls="nav-"
+                                                        aria-selected="false">12 ~ 16 °C</a>
+
+                                                    <a class="nav-item nav-link" id="nav-st" data-toggle="tab"
+                                                        href="#nav-17" role="tab" aria-controls="nav-17"
+                                                        aria-selected="false">17 ~ 19 °C</a>
+
+                                                    <a class="nav-item nav-link" id="nav-tt" data-toggle="tab"
+                                                        href="#nav-20" role="tab" aria-controls="nav-20"
+                                                        aria-selected="false">20 ~ 22 °C</a>
+
+                                                    <a class="nav-item nav-link" id="nav-th" data-toggle="tab"
+                                                        href="#nav-23" role="tab" aria-controls="nav-23"
+                                                        aria-selected="false">23 ~ 27 °C</a>
+
+                                                    <a class="nav-item nav-link" id="nav-te" data-toggle="tab"
+                                                        href="#nav-28" role="tab" aria-controls="nav-28"
+                                                        aria-selected="false">28 ~ °C</a>
+
+                                                </div>
+                                            </nav>
+
+                                            <div class="tab-content container-fluid intro" id="nav-tabContent">
+                                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                                    aria-labelledby="nav-home-tab">
+                                                    <p class="w_cd_p">패딩, 두꺼운 코트, 목도리, 기모 제품 <br><span class="sm_p">(최대한 많이
+                                                            껴입자!!)</span></p>
+                                                    <!--Carousel Wrapper-->
+                                                    <div id="multi-item-example2"
+                                                        class="carousel slide carousel-multi-item mt-4"
+                                                        data-ride="carousel">
+
+                                                        <!--Indicators-->
+                                                        <ol class="carousel-indicators">
+                                                            <li data-target="#multi-item-example2" data-slide-to="0"
+                                                                class="active"></li>
+                                                            <li data-target="#multi-item-example2" data-slide-to="1">
+                                                            </li>
+                                                        </ol>
+                                                        <!--/.Indicators-->
+
+                                                        <!--Slides-->
+                                                        <div class="carousel-inner" id="portfolio" role="listbox">
+
+                                                            <!--First slide-->
+                                                            <div class="row carousel-item active ">
+                                                                <div class="row p-0">
+                                                                    <div class="col-md-4">
+                                                                        <a class="portfolio-box"
+                                                                            href="images/weather_/f1.jpg">
+                                                                            <img class="img-top" width="100%"
+                                                                                src="images/weather_/f1.jpg" alt=""></a>
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <a class="portfolio-box"
+                                                                            href="images/weather_/f2.jpg">
+                                                                            <img class="img-top" width="100%"
+                                                                                src="images/weather_/f2.jpg" alt=""></a>
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <a class="portfolio-box"
+                                                                            href="images/weather_/f3.jpg">
+
+                                                                            <img class="img-top" width="100%"
+                                                                                src="images/weather_/f3.jpg" alt=""></a>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <!--/.First slide-->
+
+                                                            <!--Second slide-->
+                                                            <div class="carousel-item">
+                                                                <div class="row p-0">
+
+                                                                    <div class="col-md-4">
+                                                                        <a class="portfolio-box"
+                                                                            href="images/weather_/f4.jpg">
+
+                                                                            <img class="img-top" width="100%"
+                                                                                src="images/weather_/f4.jpg" alt=""></a>
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <a class="portfolio-box"
+                                                                            href="images/weather_/f5.jpg">
+
+                                                                            <img class="img-top" width="100%"
+                                                                                src="images/weather_/f5.jpg" alt=""></a>
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <a class="portfolio-box"
+                                                                            href="images/weather_/f6.jpg">
+
+                                                                            <img class="img-top" width="100%"
+                                                                                src="images/weather_/f6.jpg" alt=""></a>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <!--/.Second slide-->
+                                                            <a class="carousel-control-prev" href="#multi-item-example2"
+                                                                role="button" data-slide="prev">
+                                                                <span class="carousel-control-prev-icon carousel-control"
+                                                                    aria-hidden="true"></span>
+                                                                <span class="sr-only">Previous</span>
+                                                            </a>
+                                                            <a class="carousel-control-next text-faded"
+                                                                href="#multi-item-example2" role="button"
+                                                                data-slide="next">
+                                                                <span class="carousel-control-next-icon carousel-control"
+                                                                    aria-hidden="true"></span>
+                                                                <span class="sr-only">Next</span>
+                                                            </a>
+                                                        </div>
+                                                        <!--/.Slides-->
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                                    aria-labelledby="nav-profile-tab">
+                                                    <p class="w_cd_p">코트, 히트텍, 니트, 청바지, 레깅스 <br><span class="sm_p">(레이어드 필수!)</span>
+                                                    </p>
+<!--Carousel Wrapper-->
+<div id="multi-item-example"
+class="carousel slide carousel-multi-item mt-4"
+data-ride="carousel">
+
+<!--Indicators-->
+<ol class="carousel-indicators">
+    <li data-target="#multi-item-example" data-slide-to="0"
+        class="active"></li>
+    <li data-target="#multi-item-example" data-slide-to="1">
+    </li>
+</ol>
+<!--/.Indicators-->
+
+<!--Slides-->
+<div class="carousel-inner" id="portfolio" role="listbox">
+
+    <!--First slide-->
+    <div class="row carousel-item active ">
+        <div class="row p-0">
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/s1.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/s1.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/s2.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/s2.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/s6.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/s6.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+        <div class="row p-0">
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/s4.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/s4.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/s5.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/s5.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/s3.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/s3.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.Second slide-->
+    <a class="carousel-control-prev" href="#multi-item-example"
+        role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next text-faded"
+        href="#multi-item-example" role="button"
+        data-slide="next">
+        <span class="carousel-control-next-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--/.Slides-->
+</div>
+                                                    
+                                                </div>
+
+                                                <div class="tab-pane fade " id="nav-contact" role="tabpanel"
+                                                    aria-labelledby="nav-contact-tab">
+                                                    <p class="w_cd_p">자켓, 트렌치코트, 야상, 니트, 스타킹, 청바지, 면바지 <br><span class="sm_p">(아우터 안에
+                                                            가디건 필수!)</span></p>
+<!--Carousel Wrapper-->
+<div id="multi-item-example3"
+class="carousel slide carousel-multi-item mt-4"
+data-ride="carousel">
+
+<!--Indicators-->
+<ol class="carousel-indicators">
+    <li data-target="#multi-item-example3" data-slide-to="0"
+        class="active"></li>
+    <li data-target="#multi-item-example3" data-slide-to="1">
+    </li>
+</ol>
+<!--/.Indicators-->
+
+<!--Slides-->
+<div class="carousel-inner" id="portfolio" role="listbox">
+
+    <!--First slide-->
+    <div class="row carousel-item active ">
+        <div class="row p-0">
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/t1.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/t1.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/t2.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/t2.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/t3.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/t3.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+        <div class="row p-0">
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/t4.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/t4.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/t5.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/t5.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/t6.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/t6.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.Second slide-->
+    <a class="carousel-control-prev" href="#multi-item-example3"
+        role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next text-faded"
+        href="#multi-item-example3" role="button"
+        data-slide="next">
+        <span class="carousel-control-next-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--/.Slides-->
+</div>
+
+                                                </div>
+
+                                                <div class="tab-pane fade" id="nav-" role="tabpanel"
+                                                    aria-labelledby="nav-tab">
+                                                    <p class="w_cd_p">자켓, 가디건, 맨투맨, 니트, 스타킹, 청바지, 면바지</p>
+
+<!--Carousel Wrapper-->
+<div id="multi-item-example4"
+class="carousel slide carousel-multi-item mt-4"
+data-ride="carousel">
+
+<!--Indicators-->
+<ol class="carousel-indicators">
+    <li data-target="#multi-item-example4" data-slide-to="0"
+        class="active"></li>
+    <li data-target="#multi-item-example4" data-slide-to="1">
+    </li>
+</ol>
+<!--/.Indicators-->
+
+<!--Slides-->
+<div class="carousel-inner" id="portfolio" role="listbox">
+
+    <!--First slide-->
+    <div class="row carousel-item active ">
+        <div class="row p-0">
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fo1.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fo1.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fo2.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fo2.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fo3.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fo3.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+        <div class="row p-0">
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fo4.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fo4.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fo5.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fo5.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fo6.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fo6.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.Second slide-->
+    <a class="carousel-control-prev" href="#multi-item-example4"
+        role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next text-faded"
+        href="#multi-item-example4" role="button"
+        data-slide="next">
+        <span class="carousel-control-next-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--/.Slides-->
+</div>
+                                                </div>
+
+
+                                                <div class="tab-pane fade" id="nav-17" role="tabpanel"
+                                                    aria-labelledby="nav-st">
+                                                    <p class="w_cd_p">얇은 니트, 가디건, 맨투맨, 얇은 자켓, 면바지, 청바지</p>
+<!--Carousel Wrapper-->
+<div id="multi-item-example5"
+class="carousel slide carousel-multi-item mt-4"
+data-ride="carousel">
+
+<!--Indicators-->
+<ol class="carousel-indicators">
+    <li data-target="#multi-item-example5" data-slide-to="0"
+        class="active"></li>
+    <li data-target="#multi-item-example5" data-slide-to="1">
+    </li>
+</ol>
+<!--/.Indicators-->
+
+<!--Slides-->
+<div class="carousel-inner" id="portfolio" role="listbox">
+
+    <!--First slide-->
+    <div class="row carousel-item active ">
+        <div class="row p-0">
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fv1.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fv1.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fv2.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fv2.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fv3.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fv3.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+        <div class="row p-0">
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fv4.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fv4.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fv5.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fv5.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/fv6.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/fv6.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.Second slide-->
+    <a class="carousel-control-prev" href="#multi-item-example5"
+        role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next text-faded"
+        href="#multi-item-example5" role="button"
+        data-slide="next">
+        <span class="carousel-control-next-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--/.Slides-->
+</div>
+
+                                                </div>
+                                                <div class="tab-pane fade" id="nav-20" role="tabpanel"
+                                                    aria-labelledby="nav-tt">
+                                                    <p class="w_cd_p">긴팔티, 면바지, 청바지, 얇은 가디건</p>
+
+<!--Carousel Wrapper-->
+<div id="multi-item-example6"
+class="carousel slide carousel-multi-item mt-4"
+data-ride="carousel">
+
+<!--Indicators-->
+<ol class="carousel-indicators">
+    <li data-target="#multi-item-example6" data-slide-to="0"
+        class="active"></li>
+    <li data-target="#multi-item-example6" data-slide-to="1">
+    </li>
+</ol>
+<!--/.Indicators-->
+
+<!--Slides-->
+<div class="carousel-inner" id="portfolio" role="listbox">
+
+    <!--First slide-->
+    <div class="row carousel-item active ">
+        <div class="row p-0">
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/si1.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/si1.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/si5.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/si5.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/si3.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/si3.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+        <div class="row p-0">
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/si4.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/si4.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/si2.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/si2.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/si6.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/si6.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.Second slide-->
+    <a class="carousel-control-prev" href="#multi-item-example6"
+        role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next text-faded"
+        href="#multi-item-example6" role="button"
+        data-slide="next">
+        <span class="carousel-control-next-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--/.Slides-->
+</div>
+                                                </div>
+                                                <div class="tab-pane fade" id="nav-23" role="tabpanel"
+                                                    aria-labelledby="nav-th">
+                                                    <p class="w_cd_p">반팔, 얇은 긴팔, 반바지, 면바지</p>
+<!--Carousel Wrapper-->
+<div id="multi-item-example7"
+class="carousel slide carousel-multi-item mt-4"
+data-ride="carousel">
+
+<!--Indicators-->
+<ol class="carousel-indicators">
+    <li data-target="#multi-item-example7" data-slide-to="0"
+        class="active"></li>
+    <li data-target="#multi-item-example7" data-slide-to="1">
+    </li>
+</ol>
+<!--/.Indicators-->
+
+<!--Slides-->
+<div class="carousel-inner" id="portfolio" role="listbox">
+
+    <!--First slide-->
+    <div class="row carousel-item active ">
+        <div class="row p-0">
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/se1.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/se1.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/se2.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/se2.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/se3.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/se3.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+        <div class="row p-0">
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/se4.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/se4.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/se5.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/se5.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/se6.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/se6.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.Second slide-->
+    <a class="carousel-control-prev" href="#multi-item-example7"
+        role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next text-faded"
+        href="#multi-item-example7" role="button"
+        data-slide="next">
+        <span class="carousel-control-next-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--/.Slides-->
+</div>
+
+                                                </div>
+                                                <div class="tab-pane fade" id="nav-28" role="tabpanel"
+                                                    aria-labelledby="nav-te">
+                                                    <p class="w_cd_p">민소매, 반바지, 치마, 반팔</p>
+
+                                                    <!--Carousel Wrapper-->
+<div id="multi-item-example8"
+class="carousel slide carousel-multi-item mt-4"
+data-ride="carousel">
+
+<!--Indicators-->
+<ol class="carousel-indicators">
+    <li data-target="#multi-item-example8" data-slide-to="0"
+        class="active"></li>
+    <li data-target="#multi-item-example8" data-slide-to="1">
+    </li>
+</ol>
+<!--/.Indicators-->
+
+<!--Slides-->
+<div class="carousel-inner" id="portfolio" role="listbox">
+
+    <!--First slide-->
+    <div class="row carousel-item active ">
+        <div class="row p-0">
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/e1.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/e1.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/e2.jpg">
+                    <img class="img-top" width="100%"
+                        src="images/weather_/e2.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/e3.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/e3.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+        <div class="row p-0">
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/e4.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/e4.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/e5.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/e5.jpg" alt=""></a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-box"
+                    href="images/weather_/e6.jpg">
+
+                    <img class="img-top" width="100%"
+                        src="images/weather_/e6.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <!--/.Second slide-->
+    <a class="carousel-control-prev" href="#multi-item-example8"
+        role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next text-faded"
+        href="#multi-item-example8" role="button"
+        data-slide="next">
+        <span class="carousel-control-next-icon carousel-control"
+            aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--/.Slides-->
+</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+                        </section>
+                    </div>
+                </header>
+                </main>
+            </article>
+
+        </div>
+
+        <!-- Footer -->
+        <section id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+                <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a
+                    href="http://unsplash.com">Unsplash</a>.</p>
+        </section>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/browser.min.js"></script>
+    <script src="/js/breakpoints.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            let weatherIcon = {
+                '01': 'fas fa-sun',
+                '02': 'fas fa-cloud-sun',
+                '03': 'fas fa-cloud',
+                '04': 'fas fa-cloud-meatball',
+                '09': 'fas fa-cloud-sun-rain',
+                '10': 'fas fa-cloud-showers-heavy',
+                '11': 'fas fa-poo-storm',
+                '13': 'fas fa-snowflake',
+                '50': 'fas fa-smog',
+            };
+
+            $.ajax({
+                url: 'http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=5d59ad0c6255bf93732fa429ec94b658&units=metric',
+                dataType: "json",
+                type: "GET",
+                success: function (data) {
+                    var $Icon = (data.weather[0].icon).substr(0, 2);
+                    var $Temp = Math.floor(data.main.temp) + '°C';
+                    var $city = data.name;
+
+                    $('.CurrIcon').append('<i class="' + weatherIcon[$Icon] + '"></i>');
+                    $('.City').append($city);
+                    $('.CurrTemp').prepend($Temp);
+
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

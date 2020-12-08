@@ -25,6 +25,10 @@ router.get('/single', (req, res) => {
   res.render('single', { title: '싱글페이지 - Danawa' });
 });
 
+router.get('/weather', (req, res) => {
+  res.render('weather', { title: '날씨추천페이지 - Danawa' });
+});
+
 
 router.get('/board', (req, res) => {
   res.render('board', { title: '코디북 - Danawa' });
