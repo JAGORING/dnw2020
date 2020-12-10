@@ -89,9 +89,128 @@
 									<div class="title center">
                                         <h2>Search Clothes</h2>
                                         <p>옷장 속 이외의 찾는 옷을 검색하세요</p>
-                                        <div class="searchbox">
-                                            <input type="search" placeholder="Search Now">
-                                            </div>
+										<!--검색기능 구현부분-->
+										<div class="container-fluid">
+											<div class="row">
+											  <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background-color: #272727">
+												<div class="sidebar-sticky pt-3">
+												  <ul class="nav flex-column">
+													<table class = 'table' style="background-color: #000000; color: #ffffff">
+													  <b>
+													  <b>
+														<tbody>
+														<form class="form-inline my-2 my-md-0" method="get" action="{% url 'game:search' %}">
+														  <input class="form-control" type="text" placeholder="Search clothes" aria-label="Search" name="" value="">
+														  <br>
+														  <div class="form-check form-check-inline">
+															  &nbsp;&nbsp;&nbsp;
+															  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="f", value={{g}}>
+															  <class class="form-check-label" for="inlineCheckbox5" style="color: #CDCDCD"></class>
+														  </div>
+														  <br>
+														  <div class="form-group">
+															<a href = "#" onclick= "event.stopPropagation()"></a>
+															<label for="customRange3" style="color: #CDCDCD">가격 범위</label>
+															&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<select source="[name=price]">
+																<option value="0">Any Price</option>
+																<option value="1">20000원 이하</option>
+																<option value="2">30000원 이하</option>
+																<option value="3">40000원 이하</option>
+																<option value="4">50000원 이하</option>
+																<option value="5">50000원 이상</option>
+															</select>
+										                    
+															<input type="range" class="custom-range" value = "0" min="0" max="5" step="1" id="customRange3" name="price", value={{price}}>
+															<script>
+																;(function(){
+															  
+															  function emit(target, name) {
+																var event
+																if (document.createEvent) {
+																  event = document.createEvent("HTMLEvents");
+																  event.initEvent(name, true, true);
+																} else {
+																  event = document.createEventObject();
+																  event.eventType = name;
+																}
+															
+																event.eventName = name;
+															
+																if (document.createEvent) {
+																  target.dispatchEvent(event);
+																} else {
+																  target.fireEvent("on" + event.eventType, event);
+																}    
+															  }
+															
+															  var outputsSelector = "input[type=number][source],select[source]";
+															  
+															  function onChange(e) {
+																var outputs = document.querySelectorAll(outputsSelector)
+																for (var index = 0; index < outputs.length; index++) {
+																  var item = outputs[index]
+																  var source = document.querySelector(item.getAttribute('source'));
+																  if (source) {
+																	if (item === e.target) {
+																	  source.value = item.value
+																	  emit(source, 'input')
+																	  emit(source, 'change')
+																	}
+															
+																	if (source === e.target) {
+																	  item.value = source.value
+																	}
+																  }
+																}
+															  }
+															  document.addEventListener('change', onChange)
+															  document.addEventListener('input', onChange)
+															}());
+															</script>
+														  </div>
+														  <button type='submit' class='btn btn-warning'>검색</button>  <!--위에것과 기능은 같음-->
+														  <!-- <button type='reset' class='btn btn-info'>RESET</button> -->
+														</form>
+													  </tbody>
+													</table>
+													<br>
+													<br>
+												  </ul>
+												</div>
+											</nav>
+											  <role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+												<!-- 일단 사용보류...
+											    <br>
+												<h2>검색 결과</h2>
+												<br>
+												<table class = 'table' style="color: #ffffff">
+												  <thead style="background-color: #000000">
+													<tr align = "center">
+													  <th scope="col"> 옷 이미지 </th> 
+													  <th scope="col"> 옷 이름 </th>
+													  <th scope="col"> 최저가 </th>
+													  <th scope="col"> 제작 </th>
+													</tr>
+												</thead>
+													<tbody style="background-color: #353535">
+													  <tr align = "center">
+														  <td style="padding:5px">
+															<img src="" class="thumbnails">
+														  </td>
+														  <td style="padding:5px">
+															  <a href="" style="color: #FFC107"><br>{}</a> 
+														   </td>
+														  <td style="padding:5px; color: #CDCDCD"><br>
+															  
+														  </td> 
+														  <td style="padding:5px; color: #CDCDCD"><br>
+														  </td>
+													  </tr>
+												</tbody>
+											</table> -->
+										  </role>
+										</div>
 									</div>
                                 </header>
                                 <span class="image featured"><img src="../images/crown.jpg" alt="" />
