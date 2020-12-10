@@ -44,11 +44,27 @@ router.get('/write/writeContents', function (req, res) {
 
 
 //메인 페이지
-router.get('/', function(req, res, next) {
-    Board.find({}, function (err, a) {
-        res.render('bindex', {a});
-    });
+router.get('/', async function(req, res) {
+  let page = Math.max(1, parseInt(req.query.page));
+  let limit = Math.max(1, parseInt(req.query.limit));
+  page = !isNaN(page)?page:1;                        
+  limit = !isNaN(limit)?limit:5;                    
+
+  let skip = (page-1)*limit;
+  let count = await Board.countDocuments({}); 
+  let maxPage = Math.ceil(count/limit); 
+  let boards = await Board.find({}) 
+    .skip(skip)   
+    .limit(limit) 
+    .exec();
+
+  res.render('bindex', {
+    a:boards,
+    currentPage:page, 
+    maxPage:maxPage,  
+    limit:limit       
   });
+});
 
 
 module.exports = router;

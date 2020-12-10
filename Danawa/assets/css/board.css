@@ -44,6 +44,12 @@ a{
     background-color: #f7f7f7;
     margin-bottom: 10px;
 }
+.dis3{
+    display: contents;
+}
+.dis4{
+    margin-top: 30px;
+}
 .updbt{
     margin:10px;
 }
