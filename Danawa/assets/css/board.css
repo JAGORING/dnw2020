@@ -58,3 +58,10 @@ font-weight: bold;
     margin: 0;
     width: 90%;
 }
+.view{
+    text-align: right;
+    max-width: 93.5%;
+}
+.view > p {
+    margin: 0;
+}

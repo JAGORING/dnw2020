@@ -103,18 +103,22 @@
                   <table class="table table1 table-hover">
                     <thead>
                       <tr>
+                        <th scope="col">No</th>
                         <th scope="col">제목</th>
                         <th scope="col">내용</th>
                         <th scope="col">작성자</th>
+                        <th scope="col">조회수</th>
                       </tr>
                     </thead>
                     <tbody>
                       <% if (a !== null){
                         for(let i = 0; i < a.length; i++) { %>
                       <tr>
+                        <td><%=a[i].numId%></td>
                         <td scope="row"><a href="/board/<%= a[i]._id%>"><%=a[i].title%></a></th>
                         <td><%=a[i].contents%></td>
                         <td><%=a[i].author%></td>
+                        <td><%=a[i].views%></td>
                       </tr>
                       <%  }} %> 
                     </tbody>

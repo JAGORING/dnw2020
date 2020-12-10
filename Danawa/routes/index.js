@@ -38,6 +38,8 @@ router.get('/write', (req, res) => {
 // 게시판 자세히 보기
 router.get('/board/:id', function (req, res) {
   Board.findOne({_id: req.params.id}, function (err, board) {
+      board.views++;
+      board.save();
       res.render('board', { title: 'Board', board: board });
   })
 });
