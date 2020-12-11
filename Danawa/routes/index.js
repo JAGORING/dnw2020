@@ -36,6 +36,9 @@ router.get('/write', (req, res) => {
 router.get('/m_index', (req, res) => {
   res.render('m_index', { title: '글 등록 - Danawa' });
 });
+router.get('/m_index2', (req, res) => {
+  res.render('m_index2', { title: '글 등록 - Danawa' });
+});
 
 //  게시판 기능
 // 게시판 자세히 보기

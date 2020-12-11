@@ -54,7 +54,7 @@ router.post("/login", (req, res) => {
         console.log("데이터 넣는 중", req.session);
         return req.session.save(() => {
         console.log("저장 이후", req.session); 
-            res.redirect("/");
+            res.redirect("/m_index");
         })  
         
       } 
