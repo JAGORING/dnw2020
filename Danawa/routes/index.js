@@ -33,6 +33,9 @@ router.get('/weather', (req, res) => {
 router.get('/write', (req, res) => {
   res.render('write', { title: '글 등록 - Danawa' });
 });
+router.get('/m_index', (req, res) => {
+  res.render('m_index', { title: '글 등록 - Danawa' });
+});
 
 //  게시판 기능
 // 게시판 자세히 보기
