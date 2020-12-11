@@ -3,7 +3,6 @@ const router = express.Router();
 const Board = require('../schemas/board');
 
 // 주소는 섞이면 안됨
-// 
  
 router.post('/write/writeContents', (req, res) => {
     const board = new Board();
@@ -18,7 +17,7 @@ router.post('/write/writeContents', (req, res) => {
         }
         res.redirect('/bindex');
     });
- }); 
+}); 
 
 // app.js 라우터 추가 기본경로
 // index 하나 추가후 bindex 연결
@@ -31,7 +30,9 @@ router.get('/write/writeContents', function (req, res) {
     board.title = req.body.title;
     board.contents = req.body.contents;
     board.author = req.body.author;
-   
+    board.numId = req.body.numId;
+    board.views = req.body.views;
+
     board.save(function (err) {
       if(err){
         console.log(err);
@@ -43,11 +44,27 @@ router.get('/write/writeContents', function (req, res) {
 
 
 //메인 페이지
-router.get('/', function(req, res, next) {
-    Board.find({}, function (err, a) {
-        res.render('bindex', {a});
-    });
+router.get('/', async function(req, res) {
+  let page = Math.max(1, parseInt(req.query.page));
+  let limit = Math.max(1, parseInt(req.query.limit));
+  page = !isNaN(page)?page:1;                        
+  limit = !isNaN(limit)?limit:5;                    
+
+  let skip = (page-1)*limit;
+  let count = await Board.countDocuments({}); 
+  let maxPage = Math.ceil(count/limit); 
+  let boards = await Board.find({}) 
+    .skip(skip)   
+    .limit(limit) 
+    .exec();
+
+  res.render('bindex', {
+    a:boards,
+    currentPage:page, 
+    maxPage:maxPage,  
+    limit:limit       
   });
+});
 
 
 module.exports = router;

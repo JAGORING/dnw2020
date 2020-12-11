@@ -44,6 +44,12 @@ a{
     background-color: #f7f7f7;
     margin-bottom: 10px;
 }
+.dis3{
+    display: contents;
+}
+.dis4{
+    margin-top: 30px;
+}
 .updbt{
     margin:10px;
 }
@@ -57,4 +63,11 @@ font-weight: bold;
     padding-bottom: 3px;
     margin: 0;
     width: 90%;
+}
+.view{
+    text-align: right;
+    max-width: 93.5%;
+}
+.view > p {
+    margin: 0;
 }
