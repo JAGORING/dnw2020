@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/cloth.css" />
 
@@ -13,6 +14,8 @@
 </head>
 
 <body class="single is-preload">
+
+
 
   <!-- Wrapper -->
   <div id="wrapper">
@@ -47,7 +50,6 @@
             <h2>CLOTHES FOR <%= session.username %></h2>
             
             <section class="inner-page">
-
               <section id="tabs" class="project-tab">
                 <div class="container">
                   <div class="row">
@@ -264,7 +266,26 @@
                         </div>
                       </div>
 
+                      <div class="modal fade" id="myListModal" role="dialog">
+                        <div class="modal-dialog modal-xl">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body">
+                              <p></p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
                       
+
+
                       <div class="tab-content container-fluid" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                           aria-labelledby="nav-home-tab">
@@ -278,43 +299,45 @@
 
                               <div class="container-fluid clothes">
                                 <div class="cate" id="cate">
-                                  <input type="button" class="fun-btn" id="item_hat" value="모자">
+                                  <a type="button" class="fun-btn" id="item_hat">모자</a>
 
 
-                                  <input type="button" class="fun-btn" id="item_acc" value="액세서리">
+                                  <button type="button" class="fun-btn" id="item_acc">액세서리</button>
                                   <div class="br">
-                                    <input type="button" class="fun-btn" id="item_top" value="상의">
+                                    <button type="button" class="fun-btn" id="item_top" >상의</button>
                                     <div class="br">
 
-                                      <input type="button" class="fun-btn" id="item_out" value="아우터">
+                                      <button type="button" class="fun-btn" id="item_out">아우터</button>
                                       <div class="br">
                                         <div class="br">
-                                          <input type="button" class="fun-btn" id="item_btm" value="하의">
+                                          <button type="button" class="fun-btn" id="item_btm">하의</button>
                                           <div class="br">
 
-                                            <input type="button" class="fun-btn" id="item_bag" value="가방">
+                                            <button type="button" class="fun-btn" id="item_bag">가방</button>
                                             <div class="br">
 
-                                              <input type="button" class="fun-btn" id="item_sock" value="양말">
-                                              <input type="button" class="fun-btn" id="item_shoe" value="신발">
+                                              <button type="button" class="fun-btn" id="item_sock">양말</button>
+                                              <button type="button" class="fun-btn" id="item_shoe">신발</button>
 
-                                              <input type="button" class="fun-btn" id="item_else" value="기타">
+                                              <button type="button" class="fun-btn" id="item_else">기타</button>
                                             </div>
                                           </div>
                                         </div>
                           </section>
                         </div>
 
+                        
+                      
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                           <section class="inner-page">
                             <div class="container">
                               <div class="inner-cont center col-lg-12">
-                                <button type="button" class="btn" data-toggle="modal" data-target="#addModal">
+                                <button type="button" class="btn" data-toggle="modal" id="addModal_" data-target="#addModal">
                                   아이템 추가
                                 </button>
                               </div>
                               <div class="container-fluid clothes2">
-                                <div class="row btn-group justify-content-center " role="group" aria-label="모드 선택"
+                                <div class="row btn-group justify-content-center" role="group" aria-label="모드 선택"
                                   id="id-div-mode-change">
                                   <button type="button" class="btn btn_ btn-light col-md-6 active"
                                     onclick="changeCoordMode(0)">부위 설정</button>
@@ -335,25 +358,27 @@
                                     <div class="add"><i class="fas fa-plus-circle"></i></div>
                                     <img class="coord-img" src="../../images/clothes-icons/top1-f.png" alt="상의 I" />
                                   </div>
-                                  <div class="coord-part coord-part-sub coord-part-top clickable blank"
-                                    id="id-coord-top2" value="상의">
-                                    <div class="del"><i class="fas fa-times"></i></div>
-                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
-                                    <img class="coord-img" src="../../images/clothes-icons/top2-f.png" alt="상의 II" />
-                                  </div>
                                   <div class="coord-part coord-part-main coord-part-bottom clickable blank"
                                     id="id-coord-bottom1" value="하의">
                                     <div class="del"><i class="fas fa-times"></i></div>
                                     <div class="add"><i class="fas fa-plus-circle"></i></div>
                                     <img class="coord-img" src="../../images/clothes-icons/bottom1-f.png" alt="하의 I" />
                                   </div>
+                                  <!--
+                                  <div class="coord-part coord-part-sub coord-part-top clickable blank"
+                                    id="id-coord-top2" value="상의">
+                                    <div class="del"><i class="fas fa-times"></i></div>
+                                    <div class="add"><i class="fas fa-plus-circle"></i></div>
+                                    <img class="coord-img" src="../../images/clothes-icons/top2-f.png" alt="상의 II" />
+                                  </div>
+                                  
                                   <div class="coord-part coord-part-sub coord-part-bottom clickable blank"
                                     id="id-coord-bottom2" value="하의">
                                     <div class="del"><i class="fas fa-times"></i></div>
                                     <div class="add"><i class="fas fa-plus-circle"></i></div>
                                     <img class="coord-img" src="{../../images/clothes-icons/bottom2-f.png"
                                       alt="하의 II" />
-                                  </div>
+                                  </div>-->
                                   <div class="coord-part coord-part-main clickable blank" id="id-coord-foot1"
                                     value="신발">
                                     <div class="del"><i class="fas fa-times"></i></div>
@@ -366,14 +391,14 @@
                                     <div class="add"><i class="fas fa-plus-circle"></i></div>
                                     <img class="coord-img" src="../../images/clothes-icons/foot2-f.png" alt="양말" />
                                   </div>
-
+<!--
                                   <div class="coord-part coord-part-side coord-part-acc clickable blank"
                                     id="id-coord-acc1" value="액세서리">
                                     <div class="del"><i class="fas fa-times"></i></div>
                                     <div class="add"><i class="fas fa-plus-circle"></i></div>
                                     <img class="coord-img" src="../../images/clothes-icons/acc1-f.png" alt="액세서리1" />
                                   </div>
-
+-->
                                   <div class="coord-part coord-part-side coord-part-acc clickable blank"
                                     id="id-coord-acc2" value="액세서리">
                                     <div class="del"><i class="fas fa-times"></i></div>
@@ -488,7 +513,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
-  <script src="/js/jquery.min.js"></script>
   <script src="/js/browser.min.js"></script>
   <script src="/js/breakpoints.min.js"></script>
   <script src="/js/util.js"></script>

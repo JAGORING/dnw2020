@@ -229,5 +229,39 @@
 						  });
 
 						
+						  function callModal(title, text){
+							$('#myListModal').modal('show'); 
+							$('#myListModal .modal-title').html(title);
+							$('#myListModal .modal-body').html(text);
+							}
+							var myList = "<h6>이미지 가져와서 리스트에 넣어야해용 이미지 저장이 급선무...</h6>";
 
+							$('#item_hat, #id-coord-head').click(function(){
+							callModal('내가 가진 모자 리스트', myList);
+							});
+							
+							$('#item_top, #id-coord-top1').click(function(){
+							callModal('내가 가진 상의 리스트', myList);
+							});
+							$('#item_acc, #id-coord-acc2, #id-coord-acc3, #id-coord-acc5, #id-coord-acc6').click(function(){
+							callModal('내가 가진 액세서리 리스트',myList);
+							});
+							$('#item_out, #id-coord-outer').click(function(){
+								callModal('내가 가진 아우터 리스트', myList);
+							});
+							$('#item_btm, #id-coord-bottom1').click(function(){
+								callModal('내가 가진 하의 리스트',myList);
+							});
+							$('#item_bag, #id-coord-acc4').click(function(){
+								callModal('내가 가진 가방 리스트', myList);
+							});
+							$('#item_sock, #id-coord-foot2').click(function(){
+								callModal('내가 가진 양말 리스트', myList);
+							});
+							$('#item_shoe, #id-coord-foot1').click(function(){
+								callModal('내가 가진 신발 리스트',myList);
+							});
+							$('#item_else').click(function(){
+								callModal('내가 가진 기타 리스트',myList);
+							});
 						  

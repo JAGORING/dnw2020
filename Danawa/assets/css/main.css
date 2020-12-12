@@ -3850,15 +3850,15 @@ color:#b39886 !important;
 		*/
 		
 		.coord-part-main {
-			left: 34%;
+			left: 25%;
 		}
 		
 		.coord-part-sub {
-			left: 17%;
+			left: 9%;
 		}
 		
 		.coord-part-side {
-			left: 50%;
+			left: 43%;
 		}
 		
 		.coord-part-top {
@@ -3886,34 +3886,20 @@ color:#b39886 !important;
 		#id-coord-head {
 			width: 12%;
 			top: 31%;
-			left: 70%;
+			left: 61%;
 		}
-		
-		/*
-		#id-coord-top2 {
-		
-		}
-		
-		#id-coord-bottom1 {
-		
-		}
-		
-		#id-coord-bottom1 {
-		
-		}
-		*/
 		
 		#id-coord-foot1 {
 			width: 7%;
 			top: 70%;
-			left: 34%;
+			left: 25%;
 			padding: 1% 0% 1% 0%;
 		}
 		
 		#id-coord-foot2 {
 			width: 7%;
 			top: 70%;
-			left: 42%;
+			left: 34%;
 			padding: 1% 0% 1% 0%;
 		}
 		
@@ -3929,9 +3915,11 @@ color:#b39886 !important;
 			padding: 1% 0% 1% 0%;
 		}
 		
-		#id-coord-acc2,
 		#id-coord-acc6 {
-			left: 59%;
+			left: 53%;
+		}
+		#id-coord-acc2{
+			left: 51%;
 		}
 		
 		#id-coord-acc3 {
@@ -3942,13 +3930,13 @@ color:#b39886 !important;
 		#id-coord-acc4 {
 			width: 12%;
 			top: 50%;
-			left: 55%;
+			left: 49%;
 		}
 
 		#id-coord-outer {
 			width: 16%;
 			top: 49%;
-			left: 69%;
+			left: 63%;
 		}
 		
 
@@ -3969,11 +3957,11 @@ color:#b39886 !important;
 			border-color: #f7f3ec;
 			font-weight: bold;
 		}
-		#nav-profile .active{
-			/*background-color: #b39886;*/
+		#nav-profile .clothes2 .active{
+			background-color: #b39886;
 			color: black;
 			font-weight: bold;
-		/*	border-color: #b39886;*/
+			border-color: #b39886;
 			outline-color: black;
 		}
 		#nav-profile .btn-dark:hover ,#nav-profile .btn-light:hover {
