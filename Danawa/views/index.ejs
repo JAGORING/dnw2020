@@ -26,11 +26,8 @@
 			<h1><a href="/">Danawa</a></h1>
 			<nav class="links">
 				<ul>
-					<li><a class="smooth" href="#book">Codi Book</a></li>
-					<li><a class="smooth" href="#clo">Clothes</a></li>
-					<li><a class="smooth" href="#file">Search Clothes</a></li>
-					<li><a class="smooth" href="#reco">Recommed Clothes</a></li>
-					<li><a class="smooth" href="e">뭘로 쓸지 몰라서 일단 남겨둠</a></li>
+					<li><a class="smooth" href="#book">인기글</a></li>
+					<li><a class="smooth" href="#clo">가장 많이본 글</a></li>
 				</ul>
 			</nav>
 			<nav class="main">
@@ -74,8 +71,8 @@
 						<p>필터의 기능을 사용하여 원하는 옷을 검색하세요!</p>						
 					</li>
 					<li>						
-							<h3>Recommed Clothes</h3>
-							<p>딥러닝 기술을 사용하여 상황에 맞는 옷을 추천해 드립니다.</p>						
+						<h3>Recommed Clothes</h3>
+						<p>딥러닝 기술을 사용하여 상황에 맞는 옷을 추천해 드립니다.</p>						
 					</li>
 				</ul>
 			</section>
@@ -104,8 +101,8 @@
 					</div>
 					<div class="meta">
 						<time class="published" datetime="2020-11-01">11월 1일, 2020</time>
-						<a href="#" class="author"><span class="name">기능 개발중</span><img src="images/avatar.jpg"
-								alt="" /></a>
+						<span class="name">기능 개발중</span><img src="images/avatar.jpg"
+								alt="" />
 					</div>
 				</header>
 				<img src="images/pic01.jpg" alt="" />
@@ -134,7 +131,7 @@
 								alt="" />
 					</div>
 				</header>
-				<a href="/clothes" class="image featured"><div class="ex_clothe" style="width: 100%; height: 450px;"></div></a>
+				<div class="ex_clothe" style="width: 100%; height: 450px;"></div>
 				<p>가지고 있는 옷을 옷장에 등록하여 편하게 코디해보세요!<br> 옷장에 무슨 옷이 있는지 기억이 안날 때, 
 					편하게 코디를 하고 싶을 때 유용한 기능입니다.<br> 저장한 사진의 배경 제거 및 카테고리 별로 등록이 가능합니다.
 				</p>
@@ -148,7 +145,7 @@
 				</footer>
 			</article>
 
-			<!-- Post -->
+			<!-- Post 
 			<article class="post" id="file">
 				<header>
 					<div class="title">
@@ -172,8 +169,8 @@
 						<li><a href="#" class="icon solid fa-comment">128</a></li>
 					</ul>
 				</footer>
-			</article>
-			<!-- Post -->
+			</article> -->
+			<!-- Post 
 			<article class="post" id="reco">
 				<header>
 					<div class="title">
@@ -199,7 +196,7 @@
 					</ul>
 				</footer>
 			</article>
-
+-->
 			<!-- Post -->
 			<!--
 							<article class="post">
@@ -541,9 +538,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					<article class="mini-post mpost">
 						<header>
-							<h3>오늘의 날씨</h3>
-							<time class="published" datetime="2015-10-20">November 20, 2020</time>
-							<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+							<h3><a href="/zreco">코디추천</a></h3>
+							<time class="published" datetime="2020-12-12">날씨별 알맞은 코디를 추천</time>
+							<a href="/zreco" class="author"><img src="images/avatar.jpg" alt="" /></a>
 						</header>
 						<div class="weather">
 							<div class="CurrIcon"></div>
@@ -558,87 +555,38 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					<!-- Mini Post -->
 					<article class="mini-post">
 						<header>
-							<h3><a href="single.html"></a>코디 월드컵</a></h3>
-							<time class="published" datetime="2015-10-19">October 19, 2015</time>
-							<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+							<h3><a href="/zcodibook">코디북</a></h3>
+							<time class="published" datetime="2015-10-19">입었던 옷을 공유</time>
+							<a href="/zcodibook" class="author"><img src="images/avatar.jpg" alt="" /></a>
 						</header>
-						<a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
+						<a href="/zcodibook" class="image"><img src="images/pic05.jpg" alt="" /></a>
 					</article>
 
 					<!-- Mini Post -->
 					<article class="mini-post">
 						<header>
-							<h3><a href="single.html">코디 투표 및 순위(?)</a></h3>
-							<time class="published" datetime="2015-10-18">October 18, 2015</time>
-							<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+							<h3><a href="/zclothes">옷장</a></h3>
+							<time class="published" datetime="2015-10-18">나만의 옷을 저장</time>
+							<a href="/zclothes" class="author"><img src="images/avatar.jpg" alt="" /></a>
 						</header>
-						<a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
+						<a href="/zclothes" class="image"><img src="images/ex_clothe.jpg" alt="" /></a>
 					</article>
 
 					<!-- Mini Post -->
 					<article class="mini-post">
 						<header>
-							<h3><a href="single.html">??</a></h3>
-							<time class="published" datetime="2015-10-17">October 17, 2015</time>
-							<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+							<h3><a href="/zsear">코디검색</a></h3>
+							<time class="published" datetime="2015-10-17">내가 찾는 코디를 검색</time>
+							<a href="/zsear" class="author"><img src="images/avatar.jpg" alt="" /></a>
 						</header>
-						<a href="single.html" class="image"><img src="images/pic07.jpg" alt="" /></a>
+						<a href="/zsear" class="image"><img src="images/pic07.jpg" alt="" /></a>
 					</article>
 
 				</div>
 			</section>
 
 			<!-- Posts List -->
-			<section>
-				<ul class="posts">
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
-								<time class="published" datetime="2015-10-20">October 20, 2015</time>
-							</header>
-							<a href="single.html" class="image"><img src="images/pic08.jpg" alt="" /></a>
-						</article>
-					</li>
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">Convallis maximus nisl mattis nunc id lorem</a></h3>
-								<time class="published" datetime="2015-10-15">October 15, 2015</time>
-							</header>
-							<a href="single.html" class="image"><img src="images/pic09.jpg" alt="" /></a>
-						</article>
-					</li>
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">Euismod amet placerat vivamus porttitor</a></h3>
-								<time class="published" datetime="2015-10-10">October 10, 2015</time>
-							</header>
-							<a href="single.html" class="image"><img src="images/pic10.jpg" alt="" /></a>
-						</article>
-					</li>
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">Magna enim accumsan tortor cursus ultricies</a></h3>
-								<time class="published" datetime="2015-10-08">October 8, 2015</time>
-							</header>
-							<a href="single.html" class="image"><img src="images/pic11.jpg" alt="" /></a>
-						</article>
-					</li>
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">Congue ullam corper lorem ipsum dolor</a></h3>
-								<time class="published" datetime="2015-10-06">October 7, 2015</time>
-							</header>
-							<a href="single.html" class="image"><img src="images/pic12.jpg" alt="" /></a>
-						</article>
-					</li>
-				</ul>
-			</section>
-
+			
 			<!-- About -->
 			<section class="blurb">
 				<h2>About</h2>

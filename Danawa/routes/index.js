@@ -102,4 +102,22 @@ router.get('/logout', (req, res) => {
 
 
 
+// 프리뷰 라우터
+
+router.get('/zcodibook', (req, res) => {
+  res.render('zcodibook', { title: '코디북 - preview' });
+});
+router.get('/zsear', (req, res) => {
+  res.render('zsear', { title: '코디검색 - preview' });
+});
+router.get('/zreco', (req, res) => {
+  res.render('zreco', { title: '코디추천 - preview' });
+});
+router.get('/zclothes', (req, res) => {
+  res.render('zclothes', { title: '옷장 - preview' });
+});
+
+
+
+
 module.exports = router;
