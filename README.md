@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/Leeharin115/dnw2020/wiki/1.-%ED%99%9C%EB%8F%99-%EB%82%B4%EC%97%AD">
-    Danawa CapStone Project
+    Danawa 
   </a>
 </h1>
 <p align="center">
