@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const Board = require('../schemas/board');
 
+//기본 라우터들
 
 router.get('/', (req, res) => {
   res.render('index', { title: '메인페이지 - Danawa' });
@@ -33,19 +34,13 @@ router.get('/weather', (req, res) => {
 router.get('/write', (req, res) => {
   res.render('write', { title: '글 등록 - Danawa' });
 });
-router.get('/m_index', (req, res) => {
-  res.render('m_index', { title: '글 등록 - Danawa' });
-});
-router.get('/m_index2', (req, res) => {
-  res.render('m_index2', { title: '글 등록 - Danawa' });
-});
+
+
 
 //  게시판 기능
 // 게시판 자세히 보기
 router.get('/board/:id', function (req, res) {
   Board.findOne({_id: req.params.id}, function (err, board) {
-      board.views++;
-      board.save();
       res.render('board', { title: 'Board', board: board });
   })
 });
@@ -79,5 +74,26 @@ router.post('/board/comment/write/:id', (req, res) => {
     });
 }) 
   
+router.get('/', function (req, res) {
+  Board.findOne({_id: req.params.id}, function (err, board) {
+      res.render('board', { title: 'Board', board: board });
+  })
+});
+
+
+
+// 메인 페이지 라우터 
+
+
+
+router.get('/main', (req, res) => {
+  session = req.session;
+  console.log("뭐 들어오는거 있느?" , session)
+  res.render('main', { title: '메인 - Danawa' });
+});
+
+
+
+
 
 module.exports = router;
