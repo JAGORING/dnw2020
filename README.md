@@ -3,6 +3,10 @@
     Danawa CapStone Project
   </a>
 </h1>
+<p align="center">
+  <strong>나만의 코디를 찾아보아요!</strong><br>
+  언제, 어디서든.
+</p>
 
 
 
