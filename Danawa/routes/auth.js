@@ -62,13 +62,16 @@ router.post("/login", (req, res) => {
   }});
 });
 
-router.post('/logout', (req, res) => {
-  console.log('삭제전: ', req.session.email);
-  req.logout();
-  req.session.destroy(); 
-  res.redirect('/');
-  console.log('삭제후: ', req.session);
-});
+// router.get('/logout', (req, res) => {
+//   console.log('삭제전: ', req.session.email);
+//   req.logout();
+//   req.session.destroy(); 
+//   res.redirect('/');
+//   console.log('삭제후: ', req.session);
+// });
+
+
+
 
 
 module.exports = router;
