@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 const Board = require('../schemas/board');
-
+require('express-session');
 //기본 라우터들
 
 router.get('/', (req, res) => {
@@ -32,6 +32,7 @@ router.get('/weather', (req, res) => {
 });
 
 router.get('/write', (req, res) => {
+  console.log("뭐 들어오는거 있느?" , session);
   res.render('write', { title: '글 등록 - Danawa' });
 });
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const Counter = require('./counter');
-
+require('express-session');
 //메인 글 모델 정의
 const boardSchema = new Schema({
     title: String,
