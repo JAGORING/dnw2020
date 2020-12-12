@@ -61,15 +61,15 @@
         <div class="container-fluid">
           <div class="mb-5">
           <div class="col-2 view">
-            <p><%=board.views%>views</p>
+            <p><span id=handViews><%=board.views%>views</span></p>
           </div>
           <div class="row col-12 d-flex justify-content-center">
             <div class="col-8 dis1">
-              <p> <%=board.title%></p>
+              <p><span id=handTitle><%=board.title%></span></p>
             </div>
             <div class="col-1"></div>
             <div class="col-2 dis1">
-              <p><%=board.author%></p>
+              <p><span id=handAuthor><%=board.author%></span></p>
             </div>
           </div>
           <div class="row col-12 d-flex justify-content-center">
@@ -145,6 +145,7 @@
   <script src="/js/breakpoints.min.js"></script>
   <script src="/js/util.js"></script>
   <script src="/js/main.js"></script>
+  <script src="/js/handwrite.js"></script>
 
 </body>
 
