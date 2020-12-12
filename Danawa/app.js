@@ -17,6 +17,8 @@ const authRouter = require('./routes/auth');
 const clothesRouter = require('./routes/clothes');
 var bindexRouter = require('./routes/bindex');
 
+
+
 dotenv.config();
 
 const app = express();

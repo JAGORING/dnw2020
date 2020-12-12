@@ -54,7 +54,7 @@ router.post("/login", (req, res) => {
         console.log("데이터 넣는 중", req.session);
         return req.session.save(() => {
         console.log("저장 이후", req.session); 
-            res.redirect("/m_index");
+            res.redirect("/main");
         })  
         
       } 
@@ -62,13 +62,16 @@ router.post("/login", (req, res) => {
   }});
 });
 
-router.get('/logout', (req, res) => {
-  console.log('삭제전: ', req.session.email);
-  req.logout();
-  req.session.destroy(); 
-  res.redirect('/');
-  console.log('삭제후: ', req.session);
-});
+// router.get('/logout', (req, res) => {
+//   console.log('삭제전: ', req.session.email);
+//   req.logout();
+//   req.session.destroy(); 
+//   res.redirect('/');
+//   console.log('삭제후: ', req.session);
+// });
+
+
+
 
 
 module.exports = router;

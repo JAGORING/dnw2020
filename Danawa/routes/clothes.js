@@ -6,8 +6,9 @@ const cloth = require('../schemas/cloth');
 
 
 router.get('/', function(req, res, next) {
-  cloth.find({}, function (err, a) {
-      console.log("옷 불러올 수 있나?", a);
+     cloth.find({}, function (err, a) {
+      session = req.session;
+      console.log("혹시 세션도 같이 넘어가나요?", session);
       res.render('clothes');
       
   });

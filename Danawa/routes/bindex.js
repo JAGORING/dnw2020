@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Board = require('../schemas/board');
-
+require('express-session');
 // 주소는 섞이면 안됨
  
 router.post('/write/writeContents', (req, res) => {
@@ -59,12 +59,16 @@ router.get('/', async function(req, res) {
     .exec();
 
   res.render('bindex', {
+    
     a:boards,
     currentPage:page, 
     maxPage:maxPage,  
     limit:limit       
   });
+  console.log("뭐 들어오는거 있느?" , session)
 });
+
+
 
 
 module.exports = router;
