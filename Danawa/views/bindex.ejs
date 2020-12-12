@@ -79,7 +79,7 @@
             </tbody>
           </table>
         </div>
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-center board_plus">
           <form action="/bindex" method="get">
             <div class="form-row dis4">
               <div class="form-group col-3 dis3">
@@ -100,14 +100,14 @@
                 var previousBtnEnabled = currentPage>1;
                 var nextBtnEnabled = currentPage<maxPage;
               %>
-              <ul class="pagination pagination-sm justify-content-center align-items-center h-100 mb-0">
+              <ul class="pagination my pagination-sm justify-content-center align-items-center h-100 mb-0">
                 <li class="page-item <%= previousBtnEnabled?'':'disabled' %>">
                   <a class="page-link" href="/bindex?page=<%= currentPage-1 %>&limit=<%= limit %>"
                     <%= previousBtnEnabled?'':'tabindex=-1' %>>«</a>
                 </li>
                 <% for(i=1;i<=maxPage;i++){ %>
                 <% if(i==1 || i==maxPage || (i>=currentPage-offset && i<=currentPage+offset)){ %>
-                <li class="page-item <%= currentPage==i?'active':'' %>"><a class="page-link"
+                <li class="page-item <%= currentPage==i?'active':'' %>"><a class="page-link page-link2"
                     href="/bindex?page=<%= i %>&limit=<%= limit %>"> <%= i %> </a></li>
                 <% } else if(i==2 || i==maxPage-1){ %>
                 <li><a class="page-link">...</a></li>

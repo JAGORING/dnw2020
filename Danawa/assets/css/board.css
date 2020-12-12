@@ -26,6 +26,32 @@ a{
     margin-top:30px;
     margin-bottom: 20px;
 }
+.my.pagination > .active > a, 
+.my.pagination > .active > span, 
+.my.pagination > .active > a:hover, 
+.my.pagination > .active > span:hover, 
+.my.pagination > .active > a:focus, 
+.my.pagination > .active > span:focus {
+  background: rgb(150, 145, 132)!important;
+  border-color:  rgb(150, 145, 132)!important;
+  color: white!important;
+}
+
+.pagination .page-link{
+    color: rgb(24, 24, 24);
+    text-decoration: none;
+  }
+
+  .pagination .page-link2{
+    color: rgb(24, 24, 24);
+    padding: 6px 13px;
+    text-decoration: none;
+    border-radius:40%;
+  }
+  .board_plus{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 .dis1{
     text-align: center;
     padding: 3px;
