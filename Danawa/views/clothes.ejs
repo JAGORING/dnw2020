@@ -313,7 +313,7 @@
                         </div>
                       </div>
 
-
+                      
                       <div class="tab-content container-fluid" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                           aria-labelledby="nav-home-tab">
@@ -328,6 +328,18 @@
                               <div class="container-fluid clothes">
                                 <div class="cate" id="cate">
                                   <input type="button" class="fun-btn" id="item_hat" value="모자">
+
+                                  <div id="demo-modal-target">
+                                    <div class="demo-title">Demo Open Modal Window</div>
+                                    <div onclick="loadDynamicContentModal('jquery')"
+                                      class="btn-modal-target" id="btn-jquery">jQuery</div>
+                                    <div onclick="loadDynamicContentModal('bootstrap')"
+                                      class="btn-modal-target" id="btn-bootstrap">Bootstrap</div>
+                                    <div onclick="loadDynamicContentModal('responsive')"
+                                      class="btn-modal-target" id="btn-responsive">Responsive</div>
+                                  </div>
+                                  <div id="demo-modal"></div>
+
                                   <input type="button" class="fun-btn" id="item_acc" value="액세서리">
                                   <div class="br">
                                     <input type="button" class="fun-btn" id="item_top" value="상의">
@@ -540,6 +552,19 @@
   <script src="/js/breakpoints.min.js"></script>
   <script src="/js/util.js"></script>
   <script src="/js/main.js"></script>
+  <script>
+    function loadDynamicContentModal(modal){
+      var options = {
+          modal: true,
+          height:100,
+          width:100
+        };
+    
+      $('#demo-modal').html("<img src='/images/Noimage.jpg' />");
+      $('#demo-modal').load('get-dynamic-content.php?modal='+modal).dialog(options).dialog('open');
+    }
+
+    </script>
 </body>
 
 </html>
