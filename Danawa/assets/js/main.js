@@ -190,13 +190,15 @@
 
 			function addCateChange(e) {
 				var head = ["모자","안경"];
-				var sang = ["아우터","기본 티","셔츠","원피스","기타"];
-				var ha = ["바지","치마","기타"];
+				var sang_ = ["코트","자켓","가디건","패딩"];
+				var sang = ["기본 티","셔츠","원피스"];
+				var ha = ["바지","치마"];
 				var foot = ["신발","양말"];
 				var other = ["액세서리","가방"];
 				var target = document.getElementById("id-additem_cate");
 			
 				if(e.value == "머리") var d = head;
+				else if(e.value == "아우터") var d = sang_;
 				else if(e.value == "상의") var d = sang;
 				else if(e.value == "하의") var d = ha;
 				else if(e.value == "발") var d = foot;

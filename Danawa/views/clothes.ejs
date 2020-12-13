@@ -87,6 +87,7 @@
                                       <option value="0" selected>선택하세요</option>
                                       <option value="머리">머리</option>
                                       <option value="상의">상의</option>
+                                      <option value="아우터">아우터</option>
                                       <option value="하의">하의</option>
                                       <option value="발">발</option>
                                       <option value="기타">기타</option>
@@ -522,66 +523,66 @@
     $('#myListModal .modal-title').html(title);
     $('#myListModal .modal-body').html(text);
     }
-    var myList1 = `<% if (cloth !== null){
+    var myList1 = `<% if (cloth !== null ){
       for(let i = 0; i < cloth.length; i++) { %>
   <tr><td>
-    <% if (cloth[i].cate=='모자'){%>
+    <% if (cloth[i].cate=='모자' && session.username == cloth[i].uId){%>
     <%=cloth[i].cate%></td></tr>
     <%  }}} %>`;
 
     var myList2 = `<% if (cloth !== null){
       for(let i = 0; i < cloth.length; i++) { %>
   <tr><td>
-    <% if (cloth[i].cate=='상의'){%>
+    <% if (cloth[i].part=='상의' && session.username == cloth[i].uId){%>
     <%=cloth[i].cate%></td></tr>
     <%  }}} %>`;
 
     var myList3 = `<% if (cloth !== null){
       for(let i = 0; i < cloth.length; i++) { %>
   <tr><td>
-    <% if (cloth[i].cate=='액세서리'){%>
+    <% if (cloth[i].cate=='액세서리' && session.username == cloth[i].uId){%>
     <%=cloth[i].cate%></td></tr>
     <%  }}} %>`;
 
     var myList4 = `<% if (cloth !== null){
       for(let i = 0; i < cloth.length; i++) { %>
   <tr><td>
-    <% if (cloth[i].cate=='아우터'){%>
+    <% if (cloth[i].part=='아우터' && session.username == cloth[i].uId){%>
     <%=cloth[i].cate%></td></tr>
     <%  }}} %>`;
 
     var myList5 = `<% if (cloth !== null){
       for(let i = 0; i < cloth.length; i++) { %>
   <tr><td>
-    <% if (cloth[i].cate=='하의'){%>
+    <% if (cloth[i].part=='하의' && session.username == cloth[i].uId){%>
     <%=cloth[i].cate%></td></tr>
     <%  }}} %>`;
 
     var myList6 = `<% if (cloth !== null){
       for(let i = 0; i < cloth.length; i++) { %>
   <tr><td>
-    <% if (cloth[i].cate=='가방'){%>
+    <% if (cloth[i].cate=='가방' && session.username == cloth[i].uId){%>
     <%=cloth[i].cate%></td></tr>
     <%  }}} %>`;
 
     var myList7= `<% if (cloth !== null){
       for(let i = 0; i < cloth.length; i++) { %>
   <tr><td>
-    <% if (cloth[i].cate=='양말'){%>
+    <% if (cloth[i].cate=='양말' && session.username == cloth[i].uId){%>
     <%=cloth[i].cate%></td></tr>
     <%  }}} %>`;
 
     var myList8 = `<% if (cloth !== null){
       for(let i = 0; i < cloth.length; i++) { %>
   <tr><td>
-    <% if (cloth[i].cate=='신발'){%>
+    <% if (cloth[i].cate=='신발' && session.username == cloth[i].uId){%>
     <%=cloth[i].cate%></td></tr>
     <%  }}} %>`;
 
     var myList9 = `<% if (cloth !== null){
       for(let i = 0; i < cloth.length; i++) { %>
   <tr><td>
-    <% if (cloth[i].cate=='기타'){%>
+    <% if (cloth[i].cate=='안경' && session.username == cloth[i].uId){%>
     <%=cloth[i].cate%></td></tr>
     <%  }}} %>`;
 

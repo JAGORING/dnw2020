@@ -4,6 +4,7 @@ const { Schema } = mongoose;
  
 //메인 글 모델 정의
 const clothSchema = new Schema({
+    uId:String,
     part: String,
     cate: String,
     color: String, // 색상

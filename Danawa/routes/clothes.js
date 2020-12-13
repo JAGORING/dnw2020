@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 require('express-session');
 const cloth = require('../schemas/cloth');
+const User = require('../schemas/user');
 
 
 
@@ -18,6 +19,7 @@ router.get('/', function(req, res, next) {
 router.post('/addItem', (req, res) => {
 
   const post = new cloth({
+    uId: req.session.username,
     part : req.body.part,
     cate : req.body.cate,
     color : req.body.color,
