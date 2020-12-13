@@ -109,6 +109,7 @@ router.get('/', function (req, res) {
 
 router.get('/main', (req, res) => {
   session = req.session;
+  
   console.log("뭐 들어오는거 있느?" , session)
   res.render('main', { title: '메인 - Danawa' });
 });
