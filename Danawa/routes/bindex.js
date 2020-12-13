@@ -43,7 +43,7 @@ router.get('/write/writeContents', function (req, res) {
   });
 
 
-//메인 페이지
+// 누가봐도 게시판
 router.get('/', async function(req, res) {
   let page = Math.max(1, parseInt(req.query.page));
   let limit = Math.max(1, parseInt(req.query.limit));

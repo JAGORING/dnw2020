@@ -26,8 +26,8 @@
 			<h1><a href="/">Danawa</a></h1>
 			<nav class="links">
 				<ul>
-					<li><a class="smooth" href="#book">인기글</a></li>
-					<li><a class="smooth" href="#clo">가장 많이본 글</a></li>
+					<li><a class="smooth" href="#book">Best CodiBook</a></li>
+					<li><a class="smooth" href="#clo">Best Codi</a></li>
 				</ul>
 			</nav>
 			<nav class="main">
@@ -96,23 +96,22 @@
 			<article class="post" id="book">
 				<header>
 					<div class="title">
-						<h2>Codi Book</h2>
-						<p>자신이 입었던 옷을 공유 할 수 있습니다.</p>
+						
+						<h2><%=a[0].title%></h2>
 					</div>
 					<div class="meta">
 						<time class="published" datetime="2020-11-01">11월 1일, 2020</time>
-						<span class="name">기능 개발중</span><img src="images/avatar.jpg"
-								alt="" />
+						<span class="name"><%=a[0].author%></span><img src="images/icon1.png"
+								alt="" width="50%" />
 					</div>
 				</header>
-				<img src="images/pic01.jpg" alt="" />
-				<p>자신이 입었던 옷들을 올려보세요!<br> 친구들과 공유하고 나만의 옷들을 홍보 할 수 있는 기회가 될 수 있습니다.<br> 올리신 게시물은 댓글과 좋아요 기능이 제공될 예정이며 인기 코디들은
-					홈페이지 메인에 노출될 예정입니다.</p>
+				<img src="images/CodiChang.jpg" alt="" />
+				<p><%=a[0].contents%></p>
 				<footer>
 					<ul class="stats">
-						<li><a href="#">General</a></li>
-						<li><a href="#" class="icon solid fa-heart">28</a></li>
-						<li><a href="#" class="icon solid fa-comment">128</a></li>
+						<li><a href="#">댓글</a></li>
+						<li><a href="#" class=""><%=a[0].comments[0].contents%></a></li>
+						<li><a href="#" class="icon solid fa-comment"><%=a[0].comments[0].author%></a></li>
 					</ul>
 				</footer>
 			</article>

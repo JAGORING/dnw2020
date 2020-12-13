@@ -5,9 +5,29 @@ const Board = require('../schemas/board');
 require('express-session');
 //기본 라우터들
 
-router.get('/', (req, res) => {
-  res.render('index', { title: '메인페이지 - Danawa' });
+// router.get('/', (req, res) => {
+//   res.render('index', { title: '메인페이지 - Danawa' });
+// });
+
+// router.get('/', function (req, res) {
+//   Board.findOne({_id: req.params.id}, function (err, a) {
+//     res.render('index', { title: 'index', a: a });
+//     console.log("들어오는 게시판 정보 있나?", a); 
+//   })
+// });
+
+
+router.get('/', function(req, res, next) {
+  Board.find({}, function (err, a) {
+   session = req.session;
+   console.log("혹시 세션도 같이 넘어가나요?", session);
+   console.log("들어오는 게시판 정보 있나?", a); 
+   res.render('index', {a});
+   
 });
+});
+
+
 
 router.get('/login', (req, res) => {
   res.render('login', { title: '로그인 - Danawa' });
