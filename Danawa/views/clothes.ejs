@@ -517,6 +517,104 @@
   <script src="/js/breakpoints.min.js"></script>
   <script src="/js/util.js"></script>
   <script src="/js/main.js"></script>
+  <script>
+  function callModal(title, text){
+    $('#myListModal').modal('show'); 
+    $('#myListModal .modal-title').html(title);
+    $('#myListModal .modal-body').html(text);
+    }
+    var myList1 = `<% if (cloth !== null){
+      for(let i = 0; i < cloth.length; i++) { %>
+  <tr><td>
+    <% if (cloth[i].cate=='모자'){%>
+    <%=cloth[i].cate%></td></tr>
+    <%  }}} %>`;
+
+    var myList2 = `<% if (cloth !== null){
+      for(let i = 0; i < cloth.length; i++) { %>
+  <tr><td>
+    <% if (cloth[i].cate=='상의'){%>
+    <%=cloth[i].cate%></td></tr>
+    <%  }}} %>`;
+
+    var myList3 = `<% if (cloth !== null){
+      for(let i = 0; i < cloth.length; i++) { %>
+  <tr><td>
+    <% if (cloth[i].cate=='액세서리'){%>
+    <%=cloth[i].cate%></td></tr>
+    <%  }}} %>`;
+
+    var myList4 = `<% if (cloth !== null){
+      for(let i = 0; i < cloth.length; i++) { %>
+  <tr><td>
+    <% if (cloth[i].cate=='아우터'){%>
+    <%=cloth[i].cate%></td></tr>
+    <%  }}} %>`;
+
+    var myList5 = `<% if (cloth !== null){
+      for(let i = 0; i < cloth.length; i++) { %>
+  <tr><td>
+    <% if (cloth[i].cate=='하의'){%>
+    <%=cloth[i].cate%></td></tr>
+    <%  }}} %>`;
+
+    var myList6 = `<% if (cloth !== null){
+      for(let i = 0; i < cloth.length; i++) { %>
+  <tr><td>
+    <% if (cloth[i].cate=='가방'){%>
+    <%=cloth[i].cate%></td></tr>
+    <%  }}} %>`;
+
+    var myList7= `<% if (cloth !== null){
+      for(let i = 0; i < cloth.length; i++) { %>
+  <tr><td>
+    <% if (cloth[i].cate=='양말'){%>
+    <%=cloth[i].cate%></td></tr>
+    <%  }}} %>`;
+
+    var myList8 = `<% if (cloth !== null){
+      for(let i = 0; i < cloth.length; i++) { %>
+  <tr><td>
+    <% if (cloth[i].cate=='신발'){%>
+    <%=cloth[i].cate%></td></tr>
+    <%  }}} %>`;
+
+    var myList9 = `<% if (cloth !== null){
+      for(let i = 0; i < cloth.length; i++) { %>
+  <tr><td>
+    <% if (cloth[i].cate=='기타'){%>
+    <%=cloth[i].cate%></td></tr>
+    <%  }}} %>`;
+
+    $('#item_hat, #id-coord-head').click(function(){
+    callModal('내가 가진 모자 리스트', myList1);
+    });
+    
+    $('#item_top, #id-coord-top1').click(function(){
+    callModal('내가 가진 상의 리스트', myList2);
+    });
+    $('#item_acc, #id-coord-acc2, #id-coord-acc3, #id-coord-acc5, #id-coord-acc6').click(function(){
+    callModal('내가 가진 액세서리 리스트',myList3);
+    });
+    $('#item_out, #id-coord-outer').click(function(){
+      callModal('내가 가진 아우터 리스트', myList4);
+    });
+    $('#item_btm, #id-coord-bottom1').click(function(){
+      callModal('내가 가진 하의 리스트',myList5);
+    });
+    $('#item_bag, #id-coord-acc4').click(function(){
+      callModal('내가 가진 가방 리스트', myList6);
+    });
+    $('#item_sock, #id-coord-foot2').click(function(){
+      callModal('내가 가진 양말 리스트', myList7);
+    });
+    $('#item_shoe, #id-coord-foot1').click(function(){
+      callModal('내가 가진 신발 리스트',myList8);
+    });
+    $('#item_else').click(function(){
+      callModal('내가 가진 기타 리스트',myList9);
+    });
+  </script>
 </body>
 
 </html>

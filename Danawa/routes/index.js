@@ -2,6 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 const Board = require('../schemas/board');
+const Cloth = require('../schemas/cloth');
+
 require('express-session');
 //기본 라우터들
 
@@ -25,6 +27,14 @@ router.get('/', function(req, res, next) {
    res.render('index', {a});
    
 });
+});
+
+router.get('/clothes', function(req, res, next) {
+ Cloth.find({}, function (err, cloth) {
+  session = req.session;
+    console.log("들어오는 게시판 정보 있나?", cloth); 
+    res.render('clothes', {cloth});
+ });
 });
 
 
@@ -55,7 +65,6 @@ router.get('/write', (req, res) => {
   console.log("뭐 들어오는거 있느?" , session);
   res.render('write', { title: '글 등록 - Danawa' });
 });
-
 
 
 //  게시판 기능
