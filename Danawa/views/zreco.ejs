@@ -6,10 +6,11 @@
 -->
 <html>
 	<head>
-		<title>Preview- codiRecommed</title>
+		<title>Preview- codiRecommend</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="icon" href="images/tab_icon.png" type="image/png">
 	</head>
 	<body class="single is-preload">
 
@@ -31,9 +32,9 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="">Codi Recommed Service</a></h2>
-                                        <p>날씨에 알맞은 코디를 추천해주는 서비스 입니다.<br>
-                                            It's a service that recommends a coordinator for the weather.</p>
+										<h2><a href=""><span id="zrecoUnder">Codi Recommend Service 🌞</span></a></h2>
+                                        <p><span id="zrecoHigh">날씨</span>에 알맞은 코디를 <span id="zrecoHigh2">추천</span> 해주는 서비스 입니다.<br>
+                                            It's a service that <span id="zrecoHigh3">recommends</span> a coordinator for <span id="zrecoHigh4">the weather.</span></p>
                                         
 									</div>
 									<div class="meta">
@@ -42,8 +43,8 @@
 									</div>
 								</header>
 								<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Codi Recommed Service는 날씨 API를 활용하여 그날의 온도, 미세먼지 등을 분석하여 이용자들에게 알맞은 코디를 추천해주는 서비스입니다.<br> 날씨에 맞게 코디를 입고 재미있게 놀러가요!</p>
-								<p>This service uses weather APIs to analyze the temperature and fine dust of the day and recommend appropriate coordination to users.<br> Let's wear a stylist to suit the weather and have fun!</p>
+								<p><span id="zrecoBox">코디 추천 기능</span>은 날씨 API를 활용하여 그날의 온도, 미세먼지 등을 분석하여 이용자들에게 <span id="zrecoUnder2">알맞은 코디를 추천</span>해주는 서비스입니다.<br> 날씨에 맞게 코디를 입고 재미있게 놀러가요!</p>
+								<p><span id="zrecoBox2">Codi-Recommend service</span> uses weather APIs to analyze the temperature and fine dust of the day and <span id="zrecoUnder3">recommend appropriate coordination</span> to users.<br> Let's wear a stylist to suit the weather and have fun!</p>
 
 							</article>
 
@@ -72,7 +73,27 @@
 		<script src="/js/jquery.scrollex.min.js"></script>
 		<script src="/js/jquery.scrolly.min.js"></script>
 		<script src="/js/main.js"></script>
-		<script src="/js/main.js"></script>
-
-	</body>
+		<script src="/js/handwrite.js"></script>
+		<script>
+		  window.onload = function handZreco() {
+		   const annotate = RoughNotation.annotate;
+		   const annotationGroup = RoughNotation.annotationGroup;
+		   const $ = (t) => document.querySelector(t);
+	  
+		   {
+			const a1 = annotate($('#zrecoUnder'), { type: 'underline', color: '#acf5ea'});
+			const a2 = annotate($('#zrecoHigh'), { type: 'highlight', color: '#FFFFA1'});
+			const a3 = annotate($('#zrecoHigh2'), { type: 'highlight', color: '#FFFFA1'});
+			const a4 = annotate($('#zrecoHigh3'), { type: 'highlight', color: '#FFFFA1'});
+			const a5 = annotate($('#zrecoHigh4'), { type: 'highlight', color: '#FFFFA1'});
+			const a6 = annotate($('#zrecoBox'), { type: 'box', color: '#f88aaf', padding: 2});
+			const a7 = annotate($('#zrecoUnder2'), { type: 'underline', color: '#a1d8b1', padding: 2});
+			const a8 = annotate($('#zrecoBox2'), { type: 'box', color: '#f88aaf', padding: 2});
+			const a9 = annotate($('#zrecoUnder3'), { type: 'underline', color: '#a1d8b1', padding: 2});
+			const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7, a8, a9]);
+			ag.show();
+		   }
+		 }
+	   </script>
+		</body>
 </html>

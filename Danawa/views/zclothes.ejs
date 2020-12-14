@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="icon" href="images/tab_icon.png" type="image/png">
 	</head>
 	<body class="single is-preload">
 
@@ -29,9 +30,9 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">Clothes Service</a></h2>
-                                        <p>옷장 서비스는 내 옷들을 하나씩 하나씩 저장하고 조합해볼 수 있도록 도와주는 서비스입니다.<br>
-                                            Closet service is a service that helps you save and combine your clothes one by one.</p>
+										<h2><a href="#"><span id="zcloUnder">Clothes Service 👗</span></a></h2>
+                                        <p>옷장 서비스는 내 옷들을 하나씩 <span id="zcloHigh">저장하고 조합</span> 해볼 수 있도록 도와주는 서비스입니다.<br>
+                                            Closet service is a service that helps you <span id="zcloHigh2">save and combine</span> your clothes one by one.</p>
 									</div>
 									<div class="meta">
 										<time class="published" datetime="2015-11-01">December 1, 2020</time>
@@ -39,8 +40,8 @@
 									</div>
 								</header>
 								<div class="ex_clothe" style="width: 100%; height: 450px;"></div>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p>
+								<p><br>내 옷장 속에 <span id="zcloUnder2">무슨 옷이 있는지, 어떤 아이템들이 있는지</span> 파악하기 어려울 때가 있습니다.<br>혹은 하나씩 고른 옷들을 한 번에 입은 모습을 상상하기 어려울 때도 있습니다.<br>그럴 땐 저희가 제공하는 <span id="zcloBox">옷장 기능</span> 을 이용해보세요! 당신의 옷을 한 번만 저장한다면 <span id="zcloUnder3">언제 어디서든</span> 코디가 가능해집니다.</p>
+								<p>Sometimes it's hard to figure out <span id="zcloUnder4">what clothes and items</span> are in my closet.<br>Or sometimes it's hard to imagine you wearing each of the clothes at once.<br>Then, try using <span id="zcloBox2">the closet service</span> we offer.! If you save your clothes just once, you can coordinate <span id="zcloUnder5">anywhere, anytime.</span></p>
 							
 							</article>
 
@@ -70,6 +71,29 @@
 		<script src="/js/jquery.scrolly.min.js"></script>
 		<script src="/js/main.js"></script>
 		<script src="/js/main.js"></script>
+		<script src="/js/handwrite.js"></script>
+		<script>
+		  window.onload = function handZclo() {
+		   const annotate = RoughNotation.annotate;
+		   const annotationGroup = RoughNotation.annotationGroup;
+		   const $ = (t) => document.querySelector(t);
+	  
+		   {
+			const a1 = annotate($('#zcloUnder'), { type: 'underline', color: '#FFF176'});
+			const a2 = annotate($('#zcloHigh'), { type: 'highlight', color: '#FFDDDD'});
+			const a3 = annotate($('#zcloHigh2'), { type: 'highlight', color: '#FFDDDD'});
+			const a4 = annotate($('#zcloUnder2'), { type: 'underline', color: '#FFA7A7', padding: 2});
+			const a5 = annotate($('#zcloBox'), { type: 'box', color: '#C4FDFF', padding: 2})
+			const a6 = annotate($('#zcloUnder3'), { type: 'underline', color: '#FFF176', padding: 2});
+			const a7 = annotate($('#zcloUnder4'), { type: 'underline', color: '#FFA7A7', padding: 2});
+			const a8 = annotate($('#zcloBox2'), { type: 'box', color: '#C4FDFF', padding: 2})
+			const a9 = annotate($('#zcloUnder5'), { type: 'underline', color: '#FFF176', padding: 2});
+
+			const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7, a8, a9]);
+			ag.show();
+		   }
+		 }
+	   </script>
 
 	</body>
 </html>

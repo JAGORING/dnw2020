@@ -3446,6 +3446,7 @@ input, select, textarea {
 
 	#intro header p {
 		font-size: 0.8em;
+		float: right;
 	}
 
 	@media screen and (max-width: 1280px) {

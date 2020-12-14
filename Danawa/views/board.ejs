@@ -14,6 +14,7 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/board.css">
+  <link rel="icon" href="images/tab_icon.png" type="image/png">
   <script>
     function updateContents() {
       //글 수정 화면으로 이동
@@ -60,15 +61,15 @@
         <div class="container-fluid">
           <div class="mb-5">
           <div class="col-2 view">
-            <p><span id=handViews><%=board.views%>views</span></p>
+            <p><span id="handViews"><%=board.views%>views</span></p>
           </div>
           <div class="row col-12 d-flex justify-content-center">
             <div class="col-8 dis1">
-              <p><span id=handTitle><%=board.title%></span></p>
+              <p><span id="handTitle"><%=board.title%></span></p>
             </div>
             <div class="col-1"></div>
             <div class="col-2 dis1">
-              <p><span id=handAuthor><%=board.author%></span></p>
+              <p><span id="handAuthor"><%=board.author%></span></p>
             </div>
           </div>
           <div class="row col-12 d-flex justify-content-center">
@@ -145,7 +146,21 @@
   <script src="/js/util.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/handwrite.js"></script>
+  <script>
+    window.onload = function handBoard() {
+     const annotate = RoughNotation.annotate;
+     const annotationGroup = RoughNotation.annotationGroup;
+     const $ = (t) => document.querySelector(t);
 
+     {
+       const a1 = annotate($('#handViews'), { type: 'box', color: '#FF9090', padding: 1.5});
+       const a2 = annotate($('#handTitle'), { type: 'underline', color: '#FFBA85' });
+       const a3 = annotate($('#handAuthor'), { type: 'highlight', color: '#FFF176'})
+       const ag = annotationGroup([a1, a2, a3]);
+       ag.show();
+     }
+   }
+ </script>
 </body>
 
 </html>

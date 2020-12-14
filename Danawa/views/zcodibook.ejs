@@ -6,10 +6,11 @@
 -->
 <html>
 	<head>
-		<title>Preview- codiBook</title>
+		<title>Preview- CodiBook</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="icon" href="images/tab_icon.png" type="image/png">
 	</head>
 	<body class="single is-preload">
 
@@ -33,9 +34,9 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="">Codi Book Service</a></h2>
-										<p>내가 입었던 코디를 업로드하여 다른사람과 공유해볼 수 있는 서비스 입니다. <br>
-											This is a service that allows you to upload the clothes that I wore and try airflow with others.</p>
+										<h2><a href=""><span id="zcodiUnder">Codi Book Service 📖</span></a></h2>
+										<p>내가 입었던 <span id="zcodiHigh">코디를</span> 업로드하여 다른사람과 <span id="zcodiHigh2">공유할</span> 수 있는 서비스 입니다. <br>
+											This is a service that allows you to upload <span id="zcodiHigh3">the clothes</span> that I wore and try <span id="zcodiHigh4">airflow</span> with others.</p>
 									</div>
 									<div class="meta">
 										<time class="published" datetime="2015-11-01">December 1, 2020</time>
@@ -43,10 +44,9 @@
 									</div>
 								</header>
 								<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-								<p>CodiBook Service는 내가 입었던 옷들을 하나씩 게시글로 올려 다른사람들과 공유할 수 있는기능입니다. 다른사람이 입은 옷을 보고 나만의 코디를 찾아볼 수 있도록 성심성의것 서비스를 제공합니다.</p>
-								<p>Codybook service is a function that I can share clothes with others by posting them one by one. We offer sincere service so that you can find your own style by looking at other people's clothes. </p>
+								<p><span id="zcodiBox">코디북 서비스</span>는 내가 입었던 옷들을 하나씩 게시글로 올려 <span id="zcodiUnder2">다른사람들과 공유할 수 있는 기능</span>입니다.<br> 다른사람의 코디가 당신의 취향을 저격했다면 <span id="zcodiUnder3">댓글 기능을 통해 코멘트를</span> 남길 수도 있습니다.<br>각자의 개성있는 코디를 서로 공유할 수 있도록 성심성의껏 서비스를 제공합니다.</p>
+								<p><span id="zcodiBox2">CodiBook Service</span> is a function that allows you to post the clothes you wore and <span id="zcodiUnder4">share them with others.</span><br>If someone else's style has captured your taste, <span id="zcodiUnder5">you can leave comments</span> through the comment function.<br>We provide the service with sincerity so that we can share our unique styles with each other.</p>
 							</article>
-
 					</div>
 
 				<!-- Footer -->
@@ -73,6 +73,29 @@
 		<script src="/js/jquery.scrolly.min.js"></script>
 		<script src="/js/main.js"></script>
 		<script src="/js/main.js"></script>
-
+		<script src="/js/handwrite.js"></script>
+		<script>
+		  window.onload = function handZcodi() {
+		   const annotate = RoughNotation.annotate;
+		   const annotationGroup = RoughNotation.annotationGroup;
+		   const $ = (t) => document.querySelector(t);
+	  
+		   {
+			const a1 = annotate($('#zcodiUnder'), { type: 'underline', color: '#FF9090'});
+			const a2 = annotate($('#zcodiHigh'), { type: 'highlight', color: '#FFF176'});
+			const a3 = annotate($('#zcodiHigh2'), { type: 'highlight', color: '#FFF176'});
+			const a4 = annotate($('#zcodiHigh3'), { type: 'highlight', color: '#FFF176'});
+			const a5 = annotate($('#zcodiHigh4'), { type: 'highlight', color: '#FFF176'});
+			const a6 = annotate($('#zcodiBox'), { type: 'box', color: '#FFBA85', padding: 2});
+			const a7 = annotate($('#zcodiUnder2'), { type: 'underline', color: '#B7F0B1', padding: 2});
+			const a8 = annotate($('#zcodiUnder3'), { type: 'underline', color: '#B7F0B1', padding: 2});
+			const a9 = annotate($('#zcodiBox2'), { type: 'box', color: '#FFBA85', padding: 2});
+			const a10 = annotate($('#zcodiUnder4'), { type: 'underline', color: '#B7F0B1', padding: 2});
+			const a11 = annotate($('#zcodiUnder5'), { type: 'underline', color: '#B7F0B1', padding: 2});
+			const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11]);
+			ag.show();
+		   }
+		 }
+	   </script>
 	</body>
 </html>

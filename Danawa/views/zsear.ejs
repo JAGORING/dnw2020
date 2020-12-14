@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="icon" href="images/tab_icon.png" type="image/png">
 	</head>
 	<body class="single is-preload">
 
@@ -32,9 +33,9 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">Search Clothes Service</a></h2>
-										<p>코디 검색 서비스는 내가 찾는 코디를 계절, 종류 별로 찾을 수 있도록 도와주는 서비스입니다.
-                                            <br>Cody search service is a service that helps you find the style you are looking for by season and type.
+										<h2><a href="#"><span id="zsearUnder">Search Clothes Service 🔍</span></a></h2>
+										<p>코디 검색 서비스는 내가 찾는 코디를 <span id="zsearHigh">계절, 종류 별로</span> 찾을 수 있도록 도와주는 서비스입니다.
+                                            <br>Cody search service is a service that helps you find the style you are looking for <span id="zsearHigh2">by season and type.</span>
                                         </p>
 									</div>
 									<div class="meta">
@@ -73,6 +74,22 @@
 		<script src="/js/jquery.scrolly.min.js"></script>
 		<script src="/js/main.js"></script>
 		<script src="/js/main.js"></script>
+		<script src="/js/handwrite.js"></script>
+		<script>
+		  window.onload = function handZsear() {
+		   const annotate = RoughNotation.annotate;
+		   const annotationGroup = RoughNotation.annotationGroup;
+		   const $ = (t) => document.querySelector(t);
+	  
+		   {
+			const a1 = annotate($('#zsearUnder'), { type: 'underline', color: '#FFFF24'});
+			const a2 = annotate($('#zsearHigh'), { type: 'highlight', color: '#D9E5FF'});
+			const a3 = annotate($('#zsearHigh2'), { type: 'highlight', color: '#D9E5FF'});
+			const ag = annotationGroup([a1, a2, a3]);
+			ag.show();
+		   }
+		 }
+	   </script>
 
 	</body>
 </html>
