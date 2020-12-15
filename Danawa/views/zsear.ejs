@@ -43,9 +43,12 @@
 										<a href="#" class="author"><span class="name">Minchan</span><img src="images/avatar.jpg" alt="" /></a>
 									</div>
 								</header>
-								<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p>
+								<span class="image featured"><img src="images/search.jpg" alt="" /></span>
+								<p>옷장에 들어갈 <span id="zsearUnder2">새로운 옷</span>을 찾고 싶다면? <span id="zsearBox">검색 기능</span>을 이용해보세요. 가격대를 설정하고 아이템의 이름을 입력하면 <span id="zsearUnder3">끝!</span><br>
+									또한 검색 페이지에서는 <span id="zsearUnder4">이번 달 중</span> 가장 많이 조회된 코디와, <span id="zsearUnder5">계절 별로</span> 많이 조회된 코디도 확인할 수 있습니다.</p>
+								<p>Do you want to find <span id="zsearUnder6">new clothes</span> for your closet? Try <span id="zsearBox2">the search function.</span> 
+									Set the price range and enter the name of the item. <span id="zsearUnder7">That's it!</span><br>
+									You can also check the most viewed coordinates of <span id="zsearUnder8">the month</span> and the most frequently viewed <span id="zsearUnder9">seasonally</span> on the search page.</p>
 							</article>
 
 					</div>
@@ -85,7 +88,17 @@
 			const a1 = annotate($('#zsearUnder'), { type: 'underline', color: '#FFFF24'});
 			const a2 = annotate($('#zsearHigh'), { type: 'highlight', color: '#D9E5FF'});
 			const a3 = annotate($('#zsearHigh2'), { type: 'highlight', color: '#D9E5FF'});
-			const ag = annotationGroup([a1, a2, a3]);
+			const a4 = annotate($('#zsearUnder2'), { type: 'underline', color: '#D9E5FF'});
+			const a5 = annotate($('#zsearBox'), { type: 'box', color: '#FFFF24', padding: 2});
+			const a6 = annotate($('#zsearUnder3'), { type: 'underline', color: '#D89AFB'});
+			const a7 = annotate($('#zsearUnder4'), { type: 'underline', color: '#D89AFB'});
+			const a8 = annotate($('#zsearUnder5'), { type: 'underline', color: '#D9E5FF'});
+			const a9 = annotate($('#zsearUnder6'), { type: 'underline', color: '#D9E5FF'});
+			const a10 = annotate($('#zsearBox2'), { type: 'box', color: '#FFFF24', padding: 2});
+			const a11 = annotate($('#zsearUnder7'), { type: 'underline', color: '#D89AFB'});
+			const a12 = annotate($('#zsearUnder8'), { type: 'underline', color: '#D89AFB'});
+			const a13 = annotate($('#zsearUnder9'), { type: 'underline', color: '#D9E5FF'});
+			const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13]);
 			ag.show();
 		   }
 		 }
