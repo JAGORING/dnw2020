@@ -110,28 +110,19 @@
 			<article class="post" id="clo">
 				<header>
 					<div class="title">
-						<h2>공사중</h2>
+						<h2><span id="indexBox2">다나와</span></h2>
 						<!--제목은 그냥 a 태그를 지우는 것을 건의합니다.. 햇갈림-->
-						<p>여기다가 옷장에서 가장 잘 등록된 코디를 보여주는게 어떤지 건의합니다.</p>
+						<p>EVERYTHING IN YOUR CLOSET</p>
 					</div>
 					<div class="meta">
-						<time class="published" datetime="2020-11-03">11월 3일, 2020</time>
-					<span class="name">기능 개발중</span><img src="images/danawa.png"
-								alt="" />
+						<time class="published" datetime="2020-11-03">12월 16일, 2020</time>
+					<span class="name"><span id="indexUnderline3">DANAWA  </span></span><img src="images/danawa.png"/>
 					</div>
 				</header>
-				<div class="ex_clothe" style="width: 100%; height: 450px;"></div>
-				<p>가지고 있는 옷을 옷장에 등록하여 편하게 코디해보세요!<br> 옷장에 무슨 옷이 있는지 기억이 안날 때, 
-					편하게 코디를 하고 싶을 때 유용한 기능입니다.<br> 저장한 사진의 배경 제거 및 카테고리 별로 등록이 가능합니다.
+				<div class="intro" style="width: 100%; height: auto"><img src="/images/intro.jpg" style="width: 100%; height: auto"></div>
+				<p style="text-align: center;">좌측에 있는 <span id="indexUnderline4">프리뷰 페이지</span>를 통해 저희가 제공하는 기능들을 확인해보세요!<br>
+					<span id="indexCircle">회원가입</span>을 하신다면 기능들을 이용하실 수 있게됩니다 💗
 				</p>
-				<footer>
-					
-					<ul class="stats">
-						<li><a href="#">General</a></li>
-						<li><a href="#" class="icon solid fa-heart">28</a></li>
-						<li><a href="#" class="icon solid fa-comment">128</a></li>
-					</ul>
-				</footer>
 			</article>
 		</div>
 
@@ -154,9 +145,9 @@
 
 					<article class="mini-post mpost">
 						<header>
-							<h3><a href="/zreco">코디 추천 🌞</a></h3>
+							<h3><a href="/index">코디 추천 🌞</a></h3>
 							<time class="published" datetime="2020-12-12">날씨별 알맞은 코디를 추천</time>
-							<a href="/zreco" class="author"><img src="images/danawa.png" alt="" /></a>
+							<a href="/index" class="author"><img src="images/danawa.png" alt="" /></a>
 						</header>
 						<div class="weather">
 							<div class="CurrIcon"></div>
@@ -206,8 +197,7 @@
 			<!-- About -->
 			<section class="blurb">
 				<h2>About</h2>
-				<p>다나와에 대해 간략한 설명이 있었으면 좋겠음
-				</p>
+				<p>언제 어디서든 나의 코디를 완성할 수 있는 사이트<br>자신의 코디를 뽐내고 서로의 코디를 참고해봐요 💞</p>
 				<ul class="actions">
 					<li>Learn More</li>
 				</ul>
@@ -284,13 +274,11 @@
 		const a1 = annotate($('#indexUnderline'), { type: 'underline', color: '#FFCCFF'});
 		const a2 = annotate($('#indexBox'), { type: 'box', color: '#FFFF99'});
 		const a3 = annotate($('#indexUnderline2'), { type: 'underline', color: '#9EEEFA'});
-		// const a4 = annotate($('#zrecoHigh3'), { type: 'highlight', color: '#FFFFA1'});
-		// const a5 = annotate($('#zrecoHigh4'), { type: 'highlight', color: '#FFFFA1'});
-		// const a6 = annotate($('#zrecoBox'), { type: 'box', color: '#f88aaf', padding: 2});
-		// const a7 = annotate($('#zrecoUnder2'), { type: 'underline', color: '#a1d8b1', padding: 2});
-		// const a8 = annotate($('#zrecoBox2'), { type: 'box', color: '#f88aaf', padding: 2});
-		// const a9 = annotate($('#zrecoUnder3'), { type: 'underline', color: '#a1d8b1', padding: 2});
-		const ag = annotationGroup([a1, a2, a3]);
+		const a4 = annotate($('#indexBox2'), { type: 'box', color: '#f88aaf'});
+		const a5 = annotate($('#indexUnderline3'), { type: 'underline', color: '#FFFF99'});
+		const a6 = annotate($('#indexUnderline4'), { type: 'underline', color: '#a1d8b1', padding: 2});
+		const a7 = annotate($('#indexCircle'), { type: 'circle', color: '#f88aaf', padding: 4});
+		const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7]);
 		ag.show();
 	}
 	}
