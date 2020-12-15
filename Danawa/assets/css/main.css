@@ -4349,3 +4349,20 @@ color:#b39886 !important;
 
 			border-color: #202020;
 		}
+		.slider {
+			width: 60%;
+			margin-top: 20px;
+			-webkit-appearance: none;
+			height: 8px;
+			border-radius: 4px;
+			background-color: rgb(200, 200, 200);
+		  }
+		  .slider::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			width: 18px;
+			height: 18px;
+			border-radius: 10px;
+			background-color: rgb(207, 174, 131);
+			overflow: visible;
+			cursor: pointer;
+		  }
